@@ -1,0 +1,49 @@
+@import 'main.scss';
+
+.login-section {
+    border-radius: 20px;
+    background-color: rgba($dkgreen, .8);
+    box-shadow: 2px 2px 10px black;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 50%;
+
+    .login-form {
+        display: flex;
+        justify-content: space-around;
+    }
+    h3 {
+      color: $gold;
+      text-shadow: 1px 1px 5px $black;
+    }
+
+    a, p {
+        background-color: $silver;
+        border-radius: 10px;
+        color: $black;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 20px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        width: 150px;
+        img {
+            display: block;
+            max-height: 50px;
+            margin: 0 auto;
+            padding: 5px;
+            max-width: 50px;
+        }
+
+        &:hover {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+}
+.is-hidden {
+  display: none;
+}
