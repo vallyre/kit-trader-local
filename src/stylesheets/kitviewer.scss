@@ -33,48 +33,32 @@
         padding-left: 20px;
     }
 }
-
 .kit-viewer-search {
-    background-color: $dkgreen;
-    color: $silver;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  width: 100%;
+}
 
-    h3 {
-        font-size: 1.2rem;
-        color: $silver;
-        font-weight: 400;
-        text-align: left;
-        font-style: italic;
-        margin-left: 20px;
-    }
-
-    .kit-viewer-search-form {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        button {
-            margin: 5px;
-            border-radius: 5px;
-            background-color: $green;
-            color: $white;
-            border: none;
-            min-width: 50px;
-            height: 40px;
-
-            &:hover {
-                background-color: $gold;
-                color: $black;
-            }
-        }
-    }
+.kit-viewer-search-form {
+  background-color: rgba($silver, .8);
+  margin: 30px auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  label {
+    display: block;
+    color: $black;
+  }
+}
+.viewer-club-logo {
+  width: 150px;
 }
 
 .kit-viewer-display-container {
     text-align: center;
     width: 100%;
+    h2 {
+      color: $gold;
+      background-color: $black;
+    }
     h3 {
       background-color: $black;
     }
@@ -87,7 +71,7 @@
     }
 }
 
-.kit {
+.kit2 {
     background-color: rgba($dkgreen, .7);
     position: relative;
     max-width: 240px;

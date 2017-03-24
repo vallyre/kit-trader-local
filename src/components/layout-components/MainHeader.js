@@ -13,13 +13,10 @@ class MainHeader extends Component {
         <div className='logo-container'>
           <MainLogo />
           <nav className='site-nav'>
-              <Link to="/">Home</Link>
-              <Link to="/kit-profile">Profile</Link>
-              <Link to="/kit-builder">Kit-Builder</Link>
-              <Link to="/kit-viewer">Kit-Viewer</Link>
-              <a href='#'>FAQ</a>
+              <Link to="/profile" activeClassName='active'>Kit-Profile</Link>
+              <Link to="/builder" activeClassName='active'>Kit-Builder</Link>
+              <Link to="/viewer" activeClassName='active'>Kit-Viewer</Link>
           </nav>
-
         </div>
 
     </header>

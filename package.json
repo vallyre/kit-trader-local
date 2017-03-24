@@ -5,12 +5,15 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^4.0.0"
+    "react-if-comp": "0.0.11",
+    "styled-components": "^1.4.4"
   },
   "devDependencies": {
+    "axios": "^0.15.3",
     "node-sass": "^4.5.0",
-    "react-router": "^4.0.0-alpha.4",
-    "react-scripts": "0.9.5"
+    "react-router": "^3.0.2",
+    "react-scripts": "0.9.5",
+    "styled-components": "^1.4.4"
   },
   "scripts": {
     "build-css": "node-sass src/ -o src/",

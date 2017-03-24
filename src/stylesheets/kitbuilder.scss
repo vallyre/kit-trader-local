@@ -34,7 +34,7 @@
     }
 }
 
-.kit-builder-display-wrapper {
+.kit-builder-wrapper {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -44,28 +44,26 @@
 
 .kit-builder-forms {
     align-items: center;
-    background-color: $black;
     border-radius: 20px;
     display: flex;
-    padding: 5px;
     position: relative;
     flex-direction: column;
     justify-content: space-around;
-    min-width: 475px;
 }
 
 .item-form,
 .kit-form {
     background-color: rgba($silver, .8);
-    border: 3px solid $black;
+    border: 5px solid $black;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 5px;
     padding: 20px 0;
     text-align: center;
     width: 100%;
 
     h3 {
         font-size: 1.2rem;
+        color: $green;
     }
 
     span {
@@ -119,8 +117,29 @@
     }
 }
 
+a.post-btn {
+    background-color: $green;
+    border: 3px solid $black;
+    border-radius: 10px;
+    color: $white;
+    font-size: 1rem;
+    margin:10px 0 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100px;
+
+    &:hover {
+        background-color: $gold;
+        border: 3px solid $silver;
+        color: $black;
+    }
+}
+
 .kit-arrow {
-    margin-top: 200px;
+    display: flex;
+    align-items: center;
 
     svg {
         height: 180px;
@@ -131,109 +150,106 @@
     }
 }
 
-.kit-display-wrapper {
+.kit-display {
+    border-radius: 20px;
+    min-width: 370px;
+    min-height: 100%;
+    display: flex;
     align-items: center;
-    background-color: rgba($dkgreen, .8);
-    border: 5px solid black;
+}
+
+.kit-item-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.kit {
+    color: $white;
+    position: relative;
+    background-color: rgba($black, .4);
+    border: 1px solid $silver;
     border-radius: 20px;
     display: flex;
+    justify-content: center;
+    width: 100%;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    min-width: 370px;
-    height: 100%;
-
-    h3, h4, p {
-        font-size: 1.5rem;
-        margin: 0 10px;
-    }
-
-    h4 {
-        font-size: 1.2rem;
-    }
-
-    p {
-      font-size: 1rem;
-        color: $black;
-    }
-
-    .item-message {
-        color: $silver;
-    }
-
-    .club-logo {
-        background-color: $black;
-        border: 1px solid $black;
-        border-radius: 0 15px 0 20px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100px;
-    }
-
-    .item-detail-wrapper {
-        align-items: stretch;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .item-detail {
-        background-color: $silver;
-        border-radius: 5px;
-        border: 1px solid black;
-        color: $black;
-        margin: 5px 2px;
-        width: 100px;
-
-        &:hover {
-            background-color: $gold;
-        }
-
-        img {
-            max-height: 75px;
-        }
-    }
+    padding: 5px;
 }
 
-.kit-builder-footer {
-  align-items: center;
-  background-color: rgba($black, .5);
-  border-radius: 0 0 10px 10px;
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-  width: 100%;
-
-  .kit-builder-footer-text {
-    border-radius: 5px;
-    font-size: 1rem;
-    line-height: 1;
-    margin-left: 20px;
-    &:hover {
-      background-color: $gold;
-      color: $black;
-    }
-  }
-  img {
-    border-radius: 0 0 0 10px;
-    height: 75px;
+.kit-club-logo,
+.kit-type,
+.kit-user-photo {
+    background-color: rgba($black, .5);
+    border-radius: 0 20px 0 20px;
+    position: absolute;
     width: 75px;
-  }
-  button {
-    border: none;
-    border-radius: 50%;
-    height: 40px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-left: auto;
-    margin-right: 30px;
-    width: 40px;
-    &:hover {
-      background-color: $red;
-    }
-  }
 }
+
+.kit-type {
+    left: 0;
+    top: 0;
+    border-radius: 20px 0 20px 0;
+    color: $gold;
+    width: 60%;
+    padding: 3px 0 0 15px;
+    text-transform: capitalize;
+}
+
+.kit-club-logo {
+    right: 0;
+    top: 0;
+}
+
+.kit-user-photo {
+    left: 0;
+    bottom: 0;
+}
+
+.kit-content {
+    margin: 40px 20px 35px 25px;
+    line-height: 1.1;
+}
+
+.kit-footer {
+    text-align: left;
+    margin-left: 80px;
+    line-height: 1.2;
+}
+
+.kit-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0;
+
+    h5 {
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.kit-item {
+    background-color: rgba($white, .6);
+    stroke: $black;
+    margin: 5px;
+    color: $black;
+    border-radius: 10px;
+    max-width: 350px;
+    padding: 5px;
+    text-align: center;
+
+    svg {
+        width: 100px;
+        height: 75px;
+    }
+}
+
+.item-message {
+    color: $silver;
+}
+
 .is-hidden {
-  display: none;
+    display: none;
 }

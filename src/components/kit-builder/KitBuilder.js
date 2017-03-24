@@ -1,58 +1,85 @@
 import React, {Component} from 'react';
-import MainHeader from '../layout-components/MainHeader';
-import MainFooter from '../layout-components/MainFooter';
 import KitBuilderTitle from './KitBuilderTitle';
 import KitForm from './KitForm';
 import ItemForm from './ItemForm';
 import KitDisplay from './KitDisplay';
 import Arrow from '../svgs/Arrow';
 
+import {Link} from 'react-router';
 
 import '../../stylesheets/kitbuilder.css';
 
 class KitBuilder extends Component {
-  constructor() {
-    super();
-    this.state={
-      kit: {
-        price: null,
-        club: 'TFCA',
-        level: 'Classic',
-        season: '2015',
-        comment: null
+    constructor() {
+        super();
+        this.addKit = this.addKit.bind(this);
+        this.addItem = this.addItem.bind(this);
+        this.showItemForm = this.showItemForm.bind(this);
+        this.showKitForm = this.showKitForm.bind(this);
+
+        this.state = {
+            kits: {},
+            items: {}
+        };
+
+    }
+
+    addKit(kit) {
+        const kits = {
+            ...this.state.kits
+        };
+        const timestamp = Date.now();
+        kits[`kit-${timestamp}`] = kit;
+        this.setState({kits: kits})
+    }
+    addItem(item) {
+        const items = {
+            ...this.state.items
+        };
+        const timestamp = Date.now();
+        items[`item-${timestamp}`] = item;
+        this.setState({items: items})
+    }
+
+    showItemForm() {
+      if (Object.keys(this.state.kits).length) {
+
+        return (
+          <span>
+          <ItemForm addItem={this.addItem} />
+          <Link className='post-btn' to="/profile">Post it!</Link>
+        </span>
+          )
       }
-    };
-  }
+    }
+    showKitForm() {
+      if (!Object.keys(this.state.kits).length) {
+
+        return <KitForm addKit={this.addKit} />
+      }
+    }
+
     render() {
         return (
-            <div>
-                <MainHeader/>
-                <main>
-                    <section className='kit-builder-section'>
 
-                        <KitBuilderTitle />
+            <section className='kit-builder-section'>
 
-                        <div className='kit-builder-display-wrapper'>
+                <KitBuilderTitle/>
 
-                            <div className='kit-builder-forms'>
-                                <KitForm/>
-                                <ItemForm/>
-                            </div>
+                <div className='kit-builder-wrapper'>
 
-                            <div className='kit-arrow'>
-                                <Arrow/>
-                            </div>
+                    <div className='kit-builder-forms'>
+                        {this.showKitForm()}
+                        {this.showItemForm()}
+                    </div>
 
-                            <div className='kit-display-wrapper'>
+                    <div className='kit-arrow'>
+                        <Arrow/>
+                    </div>
+                        <KitDisplay allKits={this.state.kits} addKit={this.addKit} allItems={this.state.items} addItem={this.addItem} />
+                </div>
+            </section>
 
-                              <KitDisplay details={this.state.kit}/>
-
-                            </div>
-                        </div>
-                    </section>
-                </main>
-                <MainFooter/>
-            </div>
         )
     }
 }

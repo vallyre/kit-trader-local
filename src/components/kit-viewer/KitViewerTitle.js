@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import kitviewerlogo from '../../img/kitviewer.svg'
+import kitviewerlogo from '../../images/kitviewer.svg'
 
 
 class KitViewerTitle extends Component {
@@ -14,7 +14,7 @@ class KitViewerTitle extends Component {
           <div>
             <p>Kit-trader lists kits.</p>
             <p>Kits can contain one or many items.</p>
-            <p>Choices below filter kits.</p>
+            <p>Start by selecting a club.</p>
           </div>
 
       </div>

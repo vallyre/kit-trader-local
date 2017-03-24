@@ -1,198 +1,103 @@
 import React, {Component} from 'react';
-import MainHeader from '../layout-components/MainHeader';
-import MainFooter from '../layout-components/MainFooter';
 import KitViewerTitle from './KitViewerTitle';
 import KitSearchForm from './KitSearchForm';
-
-
-import tfcalogo from '../../img/clublogos/tfca.png'
-import casllogo from '../../img/clublogos/casl.png'
-import tusalogo from '../../img/clublogos/tusa.png'
-import acslogo from '../../img/clublogos/acs.png'
-import bsclogo from '../../img/clublogos/bsc.png'
-import jersey from '../../img/jersey.svg'
-import jacket from '../../img/jacket.svg'
-import pants from '../../img/pants.svg'
-import shorts from '../../img/shorts.svg'
-import shoes from '../../img/shoes.svg'
-import ball from '../../img/ball.svg'
-import gloves from '../../img/gloves.svg'
-import vrh from '../../img/vrh_small.jpg'
+import AllKits from './AllKits';
+import axios from 'axios';
 
 import '../../stylesheets/kitviewer.css';
 
 class KitViewer extends Component {
-  render() {
-    return (
-      <div>
-      <MainHeader />
-      <main>
-        <section className='kit-viewer-section'>
 
-          <KitViewerTitle />
+    constructor() {
+        super();
+        this.getClubs = this.getClubs.bind(this);
+        this.filterClubs = this.filterClubs.bind(this);
+        this.showKits = this.showKits.bind(this);
+        this.showSearchForm = this.showSearchForm.bind(this);
 
-          <div className='kit-viewer-search'>
+        this.state = {
+            clubs: [],
+            filtered: {}
+        };
+    }
 
-            <KitSearchForm />
+    componentDidMount() {
+        this.getClubs();
+    }
 
-          </div>
 
-          <div className='kit-viewer-display-container'>
-            <h3>Available Kits </h3>
-            <div className='kit-viewer-display'>
+    getClubs() {
+        axios
+        .get(`http://kit-trader.herokuapp.com/api/clubs.json`).then((response) => {
+            let clubs = response.data.clubs;
+            console.log('all clubs', clubs);
+            this.setState({clubs});
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    }
 
-              <article className='kit'>
-                <img className='club-logo' src={tfcalogo} alt='club logo' />
-                <h3>Kit For Sale | $50</h3>
-                <h4>TFCA | Classic | 2015-2016</h4>
-                <div className='item-detail-wrapper'>
-                  <article className='item-detail'>
-                    <img src={jersey} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={jacket} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={shoes} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={jersey} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                </div>
-                <p className='item-message'>Worn for one season, small stain on the knees and stain on front of yellow jersey.</p>
-                <footer className='kit-viewer-footer'>
-                  <img src={vrh} alt='user' />
-                  <div className='kit-viewer-footer-text'>
-                    <h4>Vallyre Hyers | 27712</h4>
-                    <h4>Contact: kit-message</h4>
-                  </div>
-                  <button className='kit-delete'>X</button>
-                </footer>
-              </article>
-              <article className='kit'>
-                <img className='club-logo' src={casllogo} alt='club logo' />
-                <h3>Kit For Sale | $50</h3>
-                <h4>CASL | Challenge | 2015-2016</h4>
-                <div className='item-detail-wrapper'>
-                  <article className='item-detail'>
-                    <img src={jersey} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={jersey} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                </div>
-                <p className='item-message'>Worn for one season, small stain on the knees and stain on front of yellow jersey.</p>
-                <footer className='kit-viewer-footer'>
-                  <img src={vrh} alt='user' />
-                  <div className='kit-viewer-footer-text'>
-                    <h4>Vallyre Hyers | 27712</h4>
-                    <h4>Contact: email</h4>
-                  </div>
-                  <button className='kit-delete'>X</button>
-                </footer>
-              </article>
-              <article className='kit'>
-                <img className='club-logo' src={tusalogo} alt='club logo' />
-                <h3>Kit For Sale | $50</h3>
-                <h4>TUSA | Classic | 2015-2016</h4>
-                <div className='item-detail-wrapper'>
-                  <article className='item-detail'>
-                    <img src={jersey} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={shorts} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={pants} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                </div>
-                <p className='item-message'>Worn for one season, small stain on the knees and stain on front of yellow jersey.</p>
-                <footer className='kit-viewer-footer'>
-                  <img src={vrh} alt='user' />
-                  <div className='kit-viewer-footer-text'>
-                    <h4>Vallyre Hyers | 27712</h4>
-                    <h4>Contact: phone</h4>
-                  </div>
-                  <button className='kit-delete'>X</button>
-                </footer>
-              </article>
-              <article className='kit'>
-                <img className='club-logo' src={acslogo} alt='club logo' />
-                <h3>Kit For Sale | $50</h3>
-                <h4>ACS | Classic | 2015-2016</h4>
-                <div className='item-detail-wrapper'>
-                  <article className='item-detail'>
-                    <img src={jersey} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                </div>
-                <p className='item-message'>Worn for one season, small stain on the knees and stain on front of yellow jersey.</p>
-                <footer className='kit-viewer-footer'>
-                  <img src={vrh} alt='user' />
-                  <div className='kit-viewer-footer-text'>
-                    <h4>Vallyre Hyers | 27712</h4>
-                    <h4>Contact:  kit-message</h4>
-                  </div>
-                  <button className='kit-delete'>X</button>
-                </footer>
-              </article>
-              <article className='kit'>
-                <img className='club-logo' src={bsclogo} alt='club logo' />
-                <h3>Kit For Sale | $50</h3>
-                <h4>BSC | Academy | 2015-2016</h4>
-                <div className='item-detail-wrapper'>
-                  <article className='item-detail'>
-                    <img src={gloves} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={ball} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                  <article className='item-detail'>
-                    <img src={shoes} alt='kit-item-display' />
-                    <p>Like New</p>
-                    <p>YL | $20</p>
-                  </article>
-                </div>
-                <p className='item-message'>Worn for one season, small stain on the knees and stain on front of yellow jersey.</p>
-                <footer className='kit-viewer-footer'>
-                  <img src={vrh} alt='user' />
-                  <div className='kit-viewer-footer-text'>
-                    <h4>Vallyre Hyers | 27712</h4>
-                    <h4>Contact: email, kit-message</h4>
-                  </div>
-                  <button className='kit-delete'>X</button>
-                </footer>
-              </article>
+
+    filterClubs(fck) {
+      let filtered = {
+          ...this.state.filtered
+      };
+      let allClubs = this.state.clubs;
+
+      for (let i=0; i < allClubs.length; i++) {
+        if (allClubs[i].short_name === fck) {
+          filtered = allClubs[i];
+          this.setState({filtered: filtered});
+          this.showKits();
+        }
+      }
+    }
+
+    showKits() {
+        if (Object.keys(this.state.filtered).length) {
+
+          return (
+            <div>
+              <h2>All Kits for: {this.state.filtered.short_name} | {this.state.filtered.long_name}</h2>
+              <img className='viewer-club-logo' src={this.state.filtered.image ? require(`../../images/clublogos/${this.state.filtered.image}`) : ''} alt='club logo'/>
+              <AllKits kits={this.state.filtered.kits} />
+              <KitSearchForm classes='form-secondary' allClubs={this.state.clubs} filter={this.filterClubs}/>
             </div>
-          </div>
-        </section>
-      </main>
-      <MainFooter />
-      </div>
-    )
-  }
+          )
+        }
+      }
+
+      showSearchForm() {
+        if (!Object.keys(this.state.filtered).length) {
+
+          return (
+          <KitSearchForm classes='kit-viewer-search-form' allClubs={this.state.clubs} filter={this.filterClubs}/>
+          )
+        }
+      }
+
+    render() {
+        return (
+            <section className='kit-viewer-section'>
+
+                <KitViewerTitle/>
+
+                <div className='kit-viewer-search'>
+
+
+
+                </div>
+
+                <div className='kit-viewer-display-container'>
+
+                  {this.showSearchForm()}
+                  {this.showKits()}
+
+                </div>
+            </section>
+
+        )
+    }
 }
 export default KitViewer;

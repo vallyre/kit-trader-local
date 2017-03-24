@@ -100,9 +100,9 @@ section {
 }
 
 main {
-    background: url('../img/grass.jpg') repeat center center;
+    background: url('../images/grass.jpg') repeat center center;
     background-size: cover;
-    height: 100%;
+    min-height: 80vh;
 }
 
 h1 {

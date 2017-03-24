@@ -72,9 +72,9 @@ section {
   border-top: 2px solid black; }
 
 main {
-  background: url("../img/grass.jpg") repeat center center;
+  background: url("../images/grass.jpg") repeat center center;
   background-size: cover;
-  height: 100%; }
+  min-height: 80vh; }
 
 h1 {
   font-size: 2rem;
@@ -96,10 +96,12 @@ h3 {
   clear: both;
   text-align: center;
   padding-top: 10px; }
-  .page-footer a {
-    color: gray; }
-    .page-footer a:hover {
-      color: white; }
+
+.page-footer a {
+  color: gray; }
+
+.page-footer a:hover {
+  color: white; }
 
 .is-hidden {
   display: none; }

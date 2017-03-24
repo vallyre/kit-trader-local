@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import kitbuilderlogo from '../../img/kitbuilder.svg'
+import kitbuilderlogo from '../../images/kitbuilder.svg'
 
 
 class KitBuilderTitle extends Component {

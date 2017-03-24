@@ -1,7 +1,7 @@
 @import 'main.scss';
 
 .site-header {
-    background: url('../img/grass.jpg') no-repeat center center;
+    background: url('../images/grass.jpg') no-repeat center center;
     background-size: cover;
     border-bottom: 10px solid black;
     text-align: center;
@@ -60,7 +60,7 @@
 }
 
 .club-logos {
-    background: url('../img/heathergray.jpg') center center;
+    background: url('../images/heathergray.jpg') center center;
     border-bottom: 10px solid black;
     display: flex;
     justify-content: space-around;
@@ -73,22 +73,25 @@
     }
 }
 
-.site-nav, ul {
+.site-nav,
+ul {
     float: right;
     height: 60px;
     width: 70%;
     display: flex;
     justify-content: flex-end;
+
     a {
-      margin-top: 20px;
-        border-radius: 5px;
-        color: $white;
+        margin-top: 20px;
+        border-radius: 10px;
+        color: $silver;
         display: block;
         font-size: 0.8rem;
         padding: 10px;
-        margin-right: 10px;
+        margin-right: 20px;
         text-transform: uppercase;
         text-decoration: none;
+
         &:hover {
             background-color: $gold;
             color: $black;
@@ -96,6 +99,14 @@
         }
     }
 }
+
+.active, a.active:hover, {
+    background-color: rgba($black, .4);
+    border-radius: 1px;
+    color: $silver;
+    transform: scale(1);
+}
+
 
 .is-hidden {
     display: none;
