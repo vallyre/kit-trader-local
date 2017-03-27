@@ -96,12 +96,10 @@ h3 {
   clear: both;
   text-align: center;
   padding-top: 10px; }
-
-.page-footer a {
-  color: gray; }
-
-.page-footer a:hover {
-  color: white; }
+  .page-footer a {
+    color: gray; }
+    .page-footer a:hover {
+      color: white; }
 
 .is-hidden {
   display: none; }
@@ -122,18 +120,15 @@ h3 {
   justify-content: center;
   padding: 10px 0;
   width: 100%; }
-
-.kit-messages-title-wrapper img {
-  max-width: 300px; }
-
-.kit-messages-title-wrapper h2 {
-  color: red;
-  font-weight: 700;
-  min-width: 225px; }
-
-.kit-messages-title-wrapper p {
-  color: black;
-  padding-left: 20px; }
+  .kit-messages-title-wrapper img {
+    max-width: 300px; }
+  .kit-messages-title-wrapper h2 {
+    color: red;
+    font-weight: 700;
+    min-width: 225px; }
+  .kit-messages-title-wrapper p {
+    color: black;
+    padding-left: 20px; }
 
 .is-hidden {
   display: none; }

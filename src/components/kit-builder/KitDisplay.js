@@ -8,7 +8,7 @@ class KitDisplay extends Component {
 
               {Object
                 .keys(this.props.allKits)
-                .map(key => <Kit key={key} kit={this.props.allKits[key]} allItems={this.props.allItems} />)
+                .map(key => <Kit key={key} kit={this.props.allKits[key]} allItems={this.props.allItems} currUser={this.props.currUser}/>)
               }
 
             </div>

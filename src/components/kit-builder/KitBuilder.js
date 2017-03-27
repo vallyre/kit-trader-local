@@ -4,6 +4,8 @@ import KitForm from './KitForm';
 import ItemForm from './ItemForm';
 import KitDisplay from './KitDisplay';
 import Arrow from '../svgs/Arrow';
+import axios from 'axios';
+
 
 import {Link} from 'react-router';
 
@@ -16,6 +18,7 @@ class KitBuilder extends Component {
         this.addItem = this.addItem.bind(this);
         this.showItemForm = this.showItemForm.bind(this);
         this.showKitForm = this.showKitForm.bind(this);
+        this.postKit = this.postKit.bind(this);
 
         this.state = {
             kits: {},
@@ -23,6 +26,7 @@ class KitBuilder extends Component {
         };
 
     }
+
 
     addKit(kit) {
         const kits = {
@@ -47,7 +51,7 @@ class KitBuilder extends Component {
         return (
           <span>
           <ItemForm addItem={this.addItem} />
-          <Link className='post-btn' to="/profile">Post it!</Link>
+          <p className='post-btn' onClick={(e) => this.postKit(this.state.kits)} to="/profile">Post it!</p>
         </span>
           )
       }
@@ -55,8 +59,32 @@ class KitBuilder extends Component {
     showKitForm() {
       if (!Object.keys(this.state.kits).length) {
 
-        return <KitForm addKit={this.addKit} />
+        return <KitForm addKit={this.addKit} currUser={this.props.user} />
       }
+    }
+
+    postKit(kitThing) {
+      console.log('kitThing', kitThing);
+      // const postKit = {
+      //     kit: {
+      //       trans_type: kitThing.kit-bunchanumbers.trans_type,
+      //       price: kitThing.kit-bunchanumbers.price,
+      //       zip_code: kitThing.kit-bunchanumbers.zip_code,
+      //       league: kitThing.kit-bunchanumbers.league,
+      //       season: kitThing.kit-bunchanumbers.season,
+      //       comment: kitThing.kit-bunchanumbers.comment,
+      //       club_id: kitThing.kit-bunchanumbers.club_id,
+      //       user_id: kitThing.kit-bunchanumbers.user_id,
+      //   }
+      // }
+          axios.post(`http://kit-trader.herokuapp.com/api/kits`, kitThing)
+          .then ((response) => {
+              console.log(response);
+              <Link to="/profile" activeClassName='active' />
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
     }
 
     render() {
@@ -76,7 +104,7 @@ class KitBuilder extends Component {
                     <div className='kit-arrow'>
                         <Arrow/>
                     </div>
-                        <KitDisplay allKits={this.state.kits} addKit={this.addKit} allItems={this.state.items} addItem={this.addItem} />
+                        <KitDisplay allKits={this.state.kits} addKit={this.addKit} allItems={this.state.items} addItem={this.addItem} currUser={this.props.user}/>
                 </div>
             </section>
 

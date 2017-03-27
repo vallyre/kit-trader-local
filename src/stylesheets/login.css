@@ -96,12 +96,10 @@ h3 {
   clear: both;
   text-align: center;
   padding-top: 10px; }
-
-.page-footer a {
-  color: gray; }
-
-.page-footer a:hover {
-  color: white; }
+  .page-footer a {
+    color: gray; }
+    .page-footer a:hover {
+      color: white; }
 
 .is-hidden {
   display: none; }
@@ -114,38 +112,33 @@ h3 {
   padding: 20px;
   text-align: center;
   width: 50%; }
-
-.login-section .login-form {
-  display: flex;
-  justify-content: space-around; }
-
-.login-section h3 {
-  color: gold;
-  text-shadow: 1px 1px 5px black; }
-
-.login-section a, .login-section p {
-  background-color: silver;
-  border-radius: 10px;
-  color: black;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 20px;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 150px; }
-
-.login-section a img, .login-section p img {
-  display: block;
-  max-height: 50px;
-  margin: 0 auto;
-  padding: 5px;
-  max-width: 50px; }
-
-.login-section a:hover, .login-section p:hover {
-  background-color: gold;
-  color: black; }
+  .login-section .login-form {
+    display: flex;
+    justify-content: space-around; }
+  .login-section h3 {
+    color: gold;
+    text-shadow: 1px 1px 5px black; }
+  .login-section a, .login-section p {
+    background-color: silver;
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 150px; }
+    .login-section a img, .login-section p img {
+      display: block;
+      max-height: 50px;
+      margin: 0 auto;
+      padding: 5px;
+      max-width: 50px; }
+    .login-section a:hover, .login-section p:hover {
+      background-color: gold;
+      color: black; }
 
 .is-hidden {
   display: none; }

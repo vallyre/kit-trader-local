@@ -96,12 +96,10 @@ h3 {
   clear: both;
   text-align: center;
   padding-top: 10px; }
-
-.page-footer a {
-  color: gray; }
-
-.page-footer a:hover {
-  color: white; }
+  .page-footer a {
+    color: gray; }
+    .page-footer a:hover {
+      color: white; }
 
 .is-hidden {
   display: none; }
@@ -120,20 +118,18 @@ h3 {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  margin-top: 70px;
   padding: 10px 0;
   width: 100%; }
-
-.kit-builder-title-wrapper img {
-  max-width: 300px; }
-
-.kit-builder-title-wrapper h2 {
-  color: red;
-  font-weight: 700;
-  min-width: 225px; }
-
-.kit-builder-title-wrapper p {
-  color: black;
-  padding-left: 20px; }
+  .kit-builder-title-wrapper img {
+    max-width: 300px; }
+  .kit-builder-title-wrapper h2 {
+    color: red;
+    font-weight: 700;
+    min-width: 225px; }
+  .kit-builder-title-wrapper p {
+    color: black;
+    padding-left: 20px; }
 
 .kit-builder-wrapper {
   display: flex;
@@ -159,64 +155,54 @@ h3 {
   padding: 20px 0;
   text-align: center;
   width: 100%; }
+  .item-form h3,
+  .kit-form h3 {
+    font-size: 1.2rem;
+    color: green; }
+  .item-form span,
+  .kit-form span {
+    color: red; }
+  .item-form div,
+  .kit-form div {
+    margin: 8px auto; }
+  .item-form label,
+  .kit-form label {
+    color: black;
+    font-size: 0.9rem;
+    padding-left: 5px; }
+  .item-form textarea,
+  .kit-form textarea {
+    border-radius: 5px;
+    max-width: 400px;
+    resize: none;
+    width: 100%; }
+  .item-form input[type=number]::-webkit-inner-spin-button,
+  .item-form input[type=number]::-webkit-outer-spin-button,
+  .kit-form input[type=number]::-webkit-inner-spin-button,
+  .kit-form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .item-form .kit-zip,
+  .kit-form .kit-zip {
+    width: 50px; }
+  .item-form .kit-phone,
+  .kit-form .kit-phone {
+    width: 90px; }
+  .item-form button,
+  .kit-form button {
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    width: 30%; }
+    .item-form button:hover,
+    .kit-form button:hover {
+      background-color: gold;
+      color: black; }
 
-.item-form h3,
-.kit-form h3 {
-  font-size: 1.2rem;
-  color: green; }
-
-.item-form span,
-.kit-form span {
-  color: red; }
-
-.item-form div,
-.kit-form div {
-  margin: 8px auto; }
-
-.item-form label,
-.kit-form label {
-  color: black;
-  font-size: 0.9rem;
-  padding-left: 5px; }
-
-.item-form textarea,
-.kit-form textarea {
-  border-radius: 5px;
-  max-width: 400px;
-  resize: none;
-  width: 100%; }
-
-.item-form input[type=number]::-webkit-inner-spin-button,
-.item-form input[type=number]::-webkit-outer-spin-button,
-.kit-form input[type=number]::-webkit-inner-spin-button,
-.kit-form input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
-
-.item-form .kit-zip,
-.kit-form .kit-zip {
-  width: 50px; }
-
-.item-form .kit-phone,
-.kit-form .kit-phone {
-  width: 90px; }
-
-.item-form button,
-.kit-form button {
-  background-color: green;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  width: 30%; }
-
-.item-form button:hover,
-.kit-form button:hover {
-  background-color: gold;
-  color: black; }
-
-a.post-btn {
+p.post-btn {
   background-color: green;
   border: 3px solid black;
   border-radius: 10px;
@@ -228,21 +214,18 @@ a.post-btn {
   text-decoration: none;
   display: block;
   width: 100px; }
-
-a.post-btn:hover {
-  background-color: gold;
-  border: 3px solid silver;
-  color: black; }
+  p.post-btn:hover {
+    background-color: gold;
+    border: 3px solid silver;
+    color: black; }
 
 .kit-arrow {
   display: flex;
   align-items: center; }
-
-.kit-arrow svg {
-  height: 180px; }
-
-.kit-arrow svg polygon {
-  fill: red; }
+  .kit-arrow svg {
+    height: 180px; }
+    .kit-arrow svg polygon {
+      fill: red; }
 
 .kit-display {
   border-radius: 20px;
@@ -270,7 +253,7 @@ a.post-btn:hover {
 .kit-club-logo,
 .kit-type,
 .kit-user-photo {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 0 20px 0 20px;
   position: absolute;
   width: 75px; }
@@ -308,10 +291,9 @@ a.post-btn:hover {
   flex-wrap: wrap;
   width: 100%;
   margin: 10px 0; }
-
-.kit-item-wrapper h5 {
-  text-align: center;
-  font-weight: 700; }
+  .kit-item-wrapper h5 {
+    text-align: center;
+    font-weight: 700; }
 
 .kit-item {
   background-color: rgba(255, 255, 255, 0.6);
@@ -322,10 +304,9 @@ a.post-btn:hover {
   max-width: 350px;
   padding: 5px;
   text-align: center; }
-
-.kit-item svg {
-  width: 100px;
-  height: 75px; }
+  .kit-item svg {
+    width: 100px;
+    height: 75px; }
 
 .item-message {
   color: silver; }

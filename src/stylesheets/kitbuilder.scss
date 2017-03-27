@@ -15,6 +15,7 @@
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    margin-top: 70px;
     padding: 10px 0;
     width: 100%;
 
@@ -117,7 +118,7 @@
     }
 }
 
-a.post-btn {
+p.post-btn {
     background-color: $green;
     border: 3px solid $black;
     border-radius: 10px;
@@ -179,7 +180,7 @@ a.post-btn {
 .kit-club-logo,
 .kit-type,
 .kit-user-photo {
-    background-color: rgba($black, .5);
+    background-color: rgba($black, .2);
     border-radius: 0 20px 0 20px;
     position: absolute;
     width: 75px;

@@ -96,12 +96,10 @@ h3 {
   clear: both;
   text-align: center;
   padding-top: 10px; }
-
-.page-footer a {
-  color: gray; }
-
-.page-footer a:hover {
-  color: white; }
+  .page-footer a {
+    color: gray; }
+    .page-footer a:hover {
+      color: white; }
 
 .is-hidden {
   display: none; }

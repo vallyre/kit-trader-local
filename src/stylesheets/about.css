@@ -96,12 +96,10 @@ h3 {
   clear: both;
   text-align: center;
   padding-top: 10px; }
-
-.page-footer a {
-  color: gray; }
-
-.page-footer a:hover {
-  color: white; }
+  .page-footer a {
+    color: gray; }
+    .page-footer a:hover {
+      color: white; }
 
 .is-hidden {
   display: none; }
@@ -113,38 +111,33 @@ h3 {
   overflow: hidden;
   text-align: center;
   width: 100%; }
-
-.about-section img {
-  float: left;
-  padding: 20px;
-  width: 30%; }
-
-.about-section h1 {
-  color: gold;
-  padding-top: 20px; }
+  .about-section img {
+    float: left;
+    padding: 20px;
+    width: 30%; }
+  .about-section h1 {
+    color: gold;
+    padding-top: 20px; }
 
 .about-wrapper {
   padding-bottom: 25px; }
-
-.about-wrapper h4 {
-  color: white;
-  font-size: 1rem; }
-
-.about-wrapper h3 {
-  background-color: silver;
-  border-radius: 50%;
-  color: black;
-  display: block;
-  font-size: 1.2rem;
-  float: left;
-  height: 100px;
-  margin: 10px 30px;
-  padding: 20px 10px;
-  width: 100px; }
-
-.about-wrapper p {
-  color: silver;
-  text-align: left; }
+  .about-wrapper h4 {
+    color: white;
+    font-size: 1rem; }
+  .about-wrapper h3 {
+    background-color: silver;
+    border-radius: 50%;
+    color: black;
+    display: block;
+    font-size: 1.2rem;
+    float: left;
+    height: 100px;
+    margin: 10px 30px;
+    padding: 20px 10px;
+    width: 100px; }
+  .about-wrapper p {
+    color: silver;
+    text-align: left; }
 
 .about-buttons a {
   background-color: green;
@@ -159,15 +152,13 @@ h3 {
   text-align: center;
   text-decoration: none;
   width: 20%; }
-
-.about-buttons a:hover {
-  background-color: gold;
-  color: black; }
-
-.about-buttons a span {
-  display: block;
-  font-weight: 400;
-  font-size: .9rem; }
+  .about-buttons a:hover {
+    background-color: gold;
+    color: black; }
+  .about-buttons a span {
+    display: block;
+    font-weight: 400;
+    font-size: .9rem; }
 
 .is-hidden {
   display: none; }

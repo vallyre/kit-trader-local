@@ -9,11 +9,11 @@ class KitProfileTitle extends Component {
 
           <div className='kit-profile-title-wrapper'>
             <img src={kitprofile} alt='kit profile logo' />
-            <h2>Your profile.</h2>
+            <h2>Your kits.</h2>
             <div>
-              <p>This is your profile page.</p>
               <p>Kits you have available are shown below.</p>
-              <p>Delete kits by clicking on the red x.</p>
+              <p>Messages from kit-trader users are shown below your name.</p>
+              <p>Deleted kits are removed from Kit-trader.</p>
             </div>
           </div>
 

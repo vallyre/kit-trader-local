@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import KitItem from './KitItem';
 import axios from 'axios';
 
-import vrh from '../../images/vrh_small.jpg'
-
 class Kit extends Component {
 
   constructor() {
@@ -35,11 +33,13 @@ class Kit extends Component {
 
       getKitClub() {
         const kitClub = this.props.kit.club;
-        console.log(this.state.clubs);
         console.log(kitClub);
         this.state.clubs.forEach((club) => {
-          if (club.short_name === kitClub) {
+          console.log(club.id);
+          if (String(club.id) === kitClub) {
+            console.log('yes');
             this.setState({club});
+          } else {
           }
         });
       }
@@ -59,14 +59,15 @@ class Kit extends Component {
         return (
             <div className='kit'>
                 <img className='kit-club-logo' src={this.state.club.image ? require(`../../images/clublogos/${this.state.club.image}`) : ''} alt='club logo'/>
-                <img className='kit-user-photo' src={vrh} alt='user'/>
-                <h3 className='kit-type'>{this.props.kit.transtype} my kit! {this.getPrice(this.props.kit.kitprice)}</h3>
+                <img className='kit-user-photo' src={this.props.currUser.image} alt='user'/>
+                <h3 className='kit-type'>{this.props.kit.trans_type} my kit! {this.getPrice(this.props.kit.price)}</h3>
 
                 <div className='kit-content'>
-                    <h3>{this.props.kit.club} | {this.state.club.long_name}</h3>
+                    <h3>{this.state.club.short_name} | {this.state.club.long_name}</h3>
                     <h4>{this.props.kit.level} | {this.props.kit.season}</h4>
                     <div className='kit-item-wrapper'>
-                        {Object.keys(this.props.allItems).map(key => <KitItem key={key} item={this.props.allItems[key]}/>)
+
+                        {Object.keys(this.props.allItems).map(key => <KitItem key={key} item={this.props.allItems[key]}  />)
 }
                     </div>
                     <p className='item-message'>{this.props.kit.comment}</p>
@@ -74,8 +75,8 @@ class Kit extends Component {
 
                 <footer className='kit-footer'>
                     <p>Listed by:</p>
-                    <h3>Vallyre Hyers</h3>
-                    <p>Send me a kit-message</p>
+                    <h3>{this.props.currUser.name}</h3>
+                    <p>{this.props.currUser.email}</p>
                 </footer>
 
             </div>

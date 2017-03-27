@@ -3,23 +3,23 @@ import React, {Component} from 'react';
 
 import ItemDisplay from '../svgs/ItemDisplay'
 
-class KitItem extends Component {
+class MyKitItem extends Component {
 
-    getPrice(price) {
-        if (Number(price) > 0) {
-            return ` | $${price}`;
-        }
-    }
+  getPrice(price) {
+      if (Number(price) > 0) {
+          return ` | $${price}`;
+      }
+  }
 
-    getNumber(num) {
-        if (num !== '') {
-            return `#${num}`;
-        }
-    }
+  getNumber(num) {
+      if (num) {
+          return `#${num}`;
+      }
+  }
 
     render() {
         return (
-          <article className='kit-item'>
+          <article className='mykit-item'>
                 <ItemDisplay type={this.props.item.item_type} color={this.props.item.color} />
                 <h5>{this.getNumber(this.props.item.number)}</h5>
                 <p>{this.props.item.condition}</p>
@@ -29,4 +29,4 @@ class KitItem extends Component {
     }
 }
 
-export default KitItem;
+export default MyKitItem;

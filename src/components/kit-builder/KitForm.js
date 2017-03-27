@@ -7,21 +7,24 @@ class KitForm extends Component {
       super();
       this.getClubs = this.getClubs.bind(this);
       this.state = {
-        clubs: []
+        clubs: [],
       };
   }
+
 
   createKit(event) {
     event.preventDefault();
     const kit = {
-      transtype: this.transtype.value,
-      kitprice: this.kitprice.value,
+      trans_type: this.transtype.value,
+      price: this.kitprice.value,
       club: this.club.value,
-      level: this.level.value,
+      league: this.level.value,
       season: this.season.value,
-      zip: this.zip.value,
+      zip_code: this.zip.value,
       cell: this.cell.value,
-      comment: this.comment.value
+      comment: this.comment.value,
+      club_id: Number(this.club.value),
+      user_id: this.props.currUser.id
     }
     this.props.addKit(kit);
     this.kitForm.reset();
@@ -70,7 +73,7 @@ class KitForm extends Component {
         <select ref={(input) => this.club = input}className='kit-club' name='club'>
 
           {this.state.clubs.map((club) =>
-            <option value={club.short_name} key={club.short_name}>{club.short_name} | {club.long_name}</option>)}
+            <option value={club.id} key={club.id}>{club.short_name} | {club.long_name}</option>)}
 
         </select><span>*</span>
 
@@ -86,7 +89,7 @@ class KitForm extends Component {
       <div className='kit-form-line'>
 
         <label htmlFor='kit-zip'>Zip code</label>
-        <input ref={(input) => this.zip = input} className='kit-zip' type='number'/><span>*</span>
+        <input ref={(input) => this.zip = input} defaultValue='12345' className='kit-zip' type='number'/><span>*</span>
 
         <label htmlFor='year'>Season</label>
         <select ref={(input) => this.season = input} className='kit-season' name='size'>

@@ -5,12 +5,11 @@ class ItemForm extends Component {
   createItem(event) {
     event.preventDefault();
     const item = {
-      type: this.type.value,
+      item_type: this.type.value,
       size: this.size.value,
       number: this.number.value,
       color: this.color.value,
-      condition: this.condition.value,
-      price: this.price.value
+      condition: this.condition.value
     }
     this.props.addItem(item);
     this.itemForm.reset();
@@ -92,10 +91,6 @@ class ItemForm extends Component {
             <option value='fair condition'>Used fair</option>
             <option value='poor condition'>Used poor</option>
       </select>
-
-          <label htmlFor='item-price'>Item price $</label>
-          <input ref={(input) => this.price = input} className='item-price' type='number' min='0' max='99' />
-
 
         </div>
 
