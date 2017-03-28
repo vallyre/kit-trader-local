@@ -5,6 +5,7 @@ import ItemForm from './ItemForm';
 import KitDisplay from './KitDisplay';
 import Arrow from '../svgs/Arrow';
 import axios from 'axios';
+import {Link} from 'react-router';
 
 
 class KitBuilder extends Component {
@@ -15,10 +16,12 @@ class KitBuilder extends Component {
         this.showItemForm = this.showItemForm.bind(this);
         this.showKitForm = this.showKitForm.bind(this);
         this.postKit = this.postKit.bind(this);
+        this.postItem = this.postItem.bind(this);
 
         this.state = {
             kits: {},
-            items: {}
+            items: {},
+            kitId: ''
         };
 
     }
@@ -47,8 +50,8 @@ class KitBuilder extends Component {
 
         return (
           <span>
-            <ItemForm addItem={this.addItem} />
-            <button className='green-btn post-btn' onClick={(e) => this.postKit(this.state.kits)} to="/profile">Looks Good Post it!</button>
+            <ItemForm addItem={this.addItem} postItem={this.postItem} kitId={this.state.kitId} />
+            <Link className='green-btn post-btn' to="/profile">Looks Good Post it!</Link>
           </span>
         )
       }
@@ -61,16 +64,37 @@ class KitBuilder extends Component {
     }
 
     postKit(kitObj) {
-      const kitId = Object.keys(kitObj)[0];
-      const kit = {
-            kit : kitObj[kitId]
+      const kit =  {
+        kit: kitObj
       }
 
-      console.log('kit', kit);
+      console.log('kit', kitObj);
 
           axios.post(`http://kit-trader.herokuapp.com/api/kits`, kit)
           .then ((response) => {
-              console.log(response);
+              let kitId = this.state.kitId;
+              kitId = response.data.id;
+              this.setState({kitId});
+
+
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+    }
+    postItem(kitItem) {
+      const item =  {
+        item: kitItem
+      }
+
+      console.log('item', kitItem);
+      console.log('item', item);
+
+          axios.post(`http://kit-trader.herokuapp.com/api/items`, item)
+          .then ((response) => {
+            console.log(response);
+
+
           })
           .catch(function(error) {
             console.log(error);

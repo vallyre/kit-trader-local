@@ -33,11 +33,8 @@ class Kit extends Component {
 
       getKitClub() {
         const kitClub = this.props.kit.club;
-        console.log(kitClub);
         this.state.clubs.forEach((club) => {
-          console.log(club.id);
           if (String(club.id) === kitClub) {
-            console.log('yes');
             this.setState({club});
           } else {
           }

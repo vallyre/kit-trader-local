@@ -1,0 +1,185 @@
+@import 'main.scss';
+
+.kit-builder-section {
+
+}
+
+.kit-builder-wrapper {
+
+}
+
+.kit-builder-forms {
+    border-radius: 20px;
+}
+
+.item-form,
+.kit-form {
+    background-color: rgba($silver, .8);
+    border: 5px solid $black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+
+    h3 {
+        font-size: 1.2rem;
+        color: $green;
+    }
+
+    span {
+        color: $red;
+    }
+
+    div {
+        margin: 8px auto;
+    }
+
+    label {
+        color: $black;
+        font-size: 0.9rem;
+        padding-left: 5px;
+    }
+
+    textarea {
+        border-radius: 5px;
+        max-width: 400px;
+        resize: none;
+        width: 100%;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .kit-zip {
+        width: 50px;
+    }
+
+    .kit-phone {
+        width: 90px;
+    }
+
+}
+
+.post-btn {
+
+}
+
+
+.kit-arrow {
+  align-items: center;
+  display: flex;
+
+  svg {
+      height: 180px;
+
+      polygon {
+          fill: $red;
+      }
+    }
+}
+
+.kit-display {
+    border-radius: 20px;
+    min-width: 400x;
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.kit {
+    color: $white;
+    position: relative;
+    background-color: rgba($black, .4);
+    border: 1px solid $silver;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.kit-club-logo,
+.kit-type,
+.kit-user-photo {
+    background-color: rgba($black, .2);
+    border-radius: 0 20px 0 20px;
+    position: absolute;
+    width: 75px;
+}
+
+.kit-type {
+    left: 0;
+    top: 0;
+    border-radius: 20px 0 20px 0;
+    color: $gold;
+    width: 60%;
+    padding: 3px 0 0 15px;
+    text-transform: capitalize;
+}
+
+.kit-club-logo {
+    right: 0;
+    top: 0;
+}
+
+.kit-user-photo {
+    left: 0;
+    bottom: 0;
+}
+
+.kit-content {
+    margin: 35px 10px 15px 0px;
+    // margin: 40px 20px 35px 25px;
+    line-height: 1.1;
+}
+
+.kit-footer {
+    text-align: left;
+    margin-left: 80px;
+    line-height: 1.2;
+}
+
+.kit-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0;
+
+    h5 {
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.kit-item {
+    background-color: rgba($white, .6);
+    stroke: $black;
+    margin: 5px;
+    color: $black;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+
+    svg {
+        width: 75px;
+        height: 50px;
+    }
+}
+
+.item-message {
+    color: $silver;
+}
+
+.is-hidden {
+    display: none;
+}

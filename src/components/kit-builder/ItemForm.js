@@ -5,6 +5,7 @@ class ItemForm extends Component {
     createItem(event) {
         event.preventDefault();
         const item = {
+            kit_id:this.props.kitId,
             item_type: this.type.value,
             size: this.size.value,
             number: this.number.value,
@@ -13,6 +14,7 @@ class ItemForm extends Component {
         }
         this.props.addItem(item);
         this.itemForm.reset();
+        this.props.postItem(item);
     }
 
     render() {

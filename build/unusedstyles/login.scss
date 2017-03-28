@@ -1,0 +1,47 @@
+@import 'main.scss';
+
+.login-section {
+    margin: 0 auto;
+    padding: 60px;
+    text-align: center;
+    width: 80%;
+
+    .login-form {
+        display: flex;
+        justify-content: space-around;
+    }
+    h3 {
+      margin-top: 10vh;
+      color: $gold;
+      text-shadow: 1px 1px 5px $black;
+    }
+
+    a, p {
+        background-color: $silver;
+        border-radius: 10px;
+        color: $black;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 20px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        width: 150px;
+        img {
+            display: block;
+            max-height: 50px;
+            margin: 0 auto;
+            padding: 5px;
+            max-width: 50px;
+        }
+
+        &:hover {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+}
+.is-hidden {
+  display: none;
+}
