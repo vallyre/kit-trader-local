@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MainLogo from '../svgs/MainLogo';
-import '../../stylesheets/header.css';
 
 class HomeHeader extends Component {
   render() {

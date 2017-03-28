@@ -13,12 +13,13 @@ import KitMessages from './components/kit-messages/KitMessages'
 import './stylesheets/main.css';
 
 const Root = () => {
+  // <IndexRoute component={Login} />
 
     return (
         <Router history={browserHistory}>
                 <Route path="/" component={Home} />
                 <Route path="/kit" component={App}>
-                  <IndexRoute component={Login} />
+                  <Route path="/login" component={Login}/>
                   <Route path="/builder" component={KitBuilder}/>
                   <Route path="/viewer" component={KitViewer}/>
                   <Route path="/profile" component={KitProfile}/>

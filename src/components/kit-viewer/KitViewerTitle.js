@@ -7,7 +7,7 @@ class KitViewerTitle extends Component {
   render() {
     return (
 
-      <div className='kit-viewer-title-wrapper'>
+      <div className='secondary-title'>
           <img src={kitviewerlogo} alt='kit viewer logo'/>
           <h2>View kits.</h2>
 

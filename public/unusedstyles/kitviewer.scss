@@ -1,4 +1,3 @@
-@import 'main.scss';
 
 .kit-viewer-section {
     align-items: flex-start;
@@ -75,7 +74,7 @@
 .kit2 {
     background-color: rgba($dkgreen, .7);
     position: relative;
-    max-width: 240px;
+    max-width: 300px;
     border: 1px solid black;
     border-radius: 15px;
     text-align: left;
@@ -105,12 +104,13 @@
 
     p {
         color: $silver;
-        background: $black;
         line-height: 1;
         padding: 5px 0;
         font-size: 0.7rem;
         text-align: center;
+
     }
+
 
     .club-logo {
         background-color: $black;
@@ -125,8 +125,20 @@
     .item-detail-wrapper {
       display: flex;
       justify-content: space-around;
+      align-items: stretch;
       padding: 5px 0;
       height: 120px;
+    }
+
+    .kit-view-item {
+      color: $black;
+      background-color: $red;
+    }
+
+    .view-tag {
+      color: $black;
+      line-height: 1;
+      padding: 0;
     }
 
     .item-detail {

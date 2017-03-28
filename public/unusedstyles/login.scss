@@ -1,19 +1,17 @@
 @import 'main.scss';
 
 .login-section {
-    border-radius: 20px;
-    background-color: rgba($dkgreen, .8);
-    box-shadow: 2px 2px 10px black;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px;
     text-align: center;
-    width: 50%;
+    width: 80%;
 
     .login-form {
         display: flex;
         justify-content: space-around;
     }
     h3 {
+      margin-top: 10vh;
       color: $gold;
       text-shadow: 1px 1px 5px $black;
     }

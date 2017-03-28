@@ -3,34 +3,40 @@ import ViewKitItem from './ViewKitItem';
 
 class Kits extends Component {
 
-
-
-
-  render() {
-    return (
-      <div className='kit'>
-          <h3 className='kit-type'>{this.props.kit.trans_type} my kit! {this.props.kit.price}</h3>
-          <div className='kit-content'>
-              <h4>{this.props.kit.league} | {this.props.kit.season}</h4>
-              <div className='kit-item-wrapper'>
-                {Object
-                  .keys(this.props.kit.items)
-                  .map(key => <ViewKitItem key={key} item={this.props.kit.items[key]}/>)
-                }
-               </div>
-              <p className='item-message'>{this.props.kit.comment}</p>
-          </div>
-
-          <footer className='kit-footer'>
-              <p>Listed by:</p>
-              <h3>Vallyre Hyers</h3>
-              <p>Send me a kit-message</p>
-          </footer>
-      </div>
-
-
-    )
+  getPrice(price) {
+    if (Number(price) > 0) {
+      return ` -- $${price}`;
+    }
   }
+
+    render() {
+        return (
+            <div className='kit'>
+              <img className='club-logo' src={this.props.club.image ? require(`../../images/clublogos/${this.props.club.image}`) : ''} alt='club logo'/>
+              <img className='user-photo' src={this.props.kit.image} alt='user'/>
+              <h3 className='kit-type'>{this.props.kit.trans_type} my kit! {this.props.kit.price}</h3>
+              <h4 className='contact'>Message</h4>
+
+              <div className='kit-content'>
+                <h4>{this.props.club.short_name} | {this.props.club.long_name}</h4>
+                <h5>{this.props.kit.league} | {this.props.kit.season}</h5>
+                <div className='kit-item-wrapper'>
+
+                        {Object.keys(this.props.kit.items).map(key => <ViewKitItem key={key} item={this.props.kit.items[key]}/>)
+}
+                    </div>
+                    <p className='item-message'>{this.props.kit.comment}</p>
+                </div>
+
+                <footer className='kit-footer'>
+                    <p>Listed by:</p>
+                    <h4>{this.props.kit.name}</h4>
+                    <h4>{this.props.kit.email}</h4>
+                </footer>
+            </div>
+
+        )
+    }
 }
 
 export default Kits;

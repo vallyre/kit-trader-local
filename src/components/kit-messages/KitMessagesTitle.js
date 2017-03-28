@@ -7,7 +7,7 @@ class KitMessagesTitle extends Component {
     return (
         <section className='kit-messages-section'>
 
-          <div className='kit-messages-title-wrapper'>
+          <div className='secondary-title'>
             <img src={kitmessages} alt='kit messages logo' />
             <h2>Your messages.</h2>
             <div>

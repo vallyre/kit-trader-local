@@ -19,7 +19,7 @@ class MyKitItem extends Component {
 
     render() {
         return (
-          <article className='mykit-item'>
+          <article className='kit-item'>
                 <ItemDisplay type={this.props.item.item_type} color={this.props.item.color} />
                 <h5>{this.getNumber(this.props.item.number)}</h5>
                 <p>{this.props.item.condition}</p>

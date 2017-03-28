@@ -1,65 +1,6 @@
-//reset
+@import 'reset.css';
 
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-button:focus, textarea:focus {
-    outline: none;
-}
-img {
-	max-width: 100%;
-	width:100%;
-}
-
-// colors
+// colors-----------------------
 $cyan: cyan;
 $black: black;
 $gold: gold;
@@ -80,62 +21,878 @@ $dkgray: rgb(60,59,59);
 $mdgray: rgb(153,153,153);
 $dkgreen: rgb(51,68,44);
 
+//breakpoint mixins----------------
+
+
+//base styles-----------------------
 html {
-    height: 100%;
+	height: 100%;
 }
 
 body {
-    background: $black;
-    color: $white;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    min-height: 100vh;
-    line-height: 1.6;
-    margin: 0 auto;
-    width: 100vw;
+	background: $black;
+	color: $white;
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+	min-height: 100vh;
+	line-height: 1.6;
+	margin: 0 auto;
+	width: 100vw;
 }
 
 section {
-    border-top: 2px solid black;
+	border-top: 2px solid black;
 }
 
 main {
-    background: url('../images/grass.jpg') repeat center center;
-    background-size: cover;
-    min-height: 80vh;
+	background: url('../images/grass.jpg') repeat center center;
+	background-size: cover;
+	min-height: 80vh;
 }
 
 h1 {
-    font-size: 2rem;
-    font-weight: 700;
+	color: $gold;
+	font-size: 2rem;
+	font-weight: 700;
 }
 
 h2 {
-    color: $gold;
-    font-size: 2rem;
+	color: $red;
+	font-size: 2rem;
+	font-weight: 700;
 }
 
 h3 {
-    color: $gold;
-    font-weight: 700;
+	color: $black;
+	font-size: 1.3rem;
+	font-weight: 700;
 }
 
-.page-footer {
-    background-color: $black;
-    color: $gray;
-    font-size: .8rem;
-    width: 100%;
-    clear: both;
+h4 {
+	color: $black;
+	font-size: 1.2 rem;
+}
+
+h5 {
+	color: $black;
+	font-size: 1.1 rem;
+}
+
+p {
+	color: $black;
+	font-size: 1 rem;
+}
+
+//homepage header-----------------------
+.site-header {
+    background: url('../images/grass.jpg') no-repeat center center;
+    background-size: cover;
+    border-bottom: 10px solid black;
     text-align: center;
-    padding-top: 10px;
-    a {
-      color: $gray;
-      &:hover {
-        color: $white;
-      }
+    top: 0;
+    width: 100%;
+}
+
+.logo-container {
+    svg {
+        filter: drop-shadow(2px 2px 10px black);
+        margin-top: 20px;
+        width: 50%;
+
+        path {
+            fill: $white;
+            stroke: none;
+        }
+
+        .logo-shirt {
+            fill-opacity: 0.5;
+            stroke: $white;
+            stroke-width: 0.5;
+        }
+
+        polygon {
+            fill: $red;
+            stroke: none;
+        }
+
+        line {
+            stroke: $red;
+            stroke-width: 13;
+        }
+
+        .logo-smletter {
+            fill: $black;
+        }
     }
 }
 
+//about styling--------------------
+
+.about-section {
+    background-color: $dkgreen;
+    border-bottom: 10px solid black;
+    color: $white;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+
+    img {
+        float: left;
+        padding: 20px;
+        width: 30%;
+    }
+
+    h1 {
+        color: $gold;
+        padding-top: 20px;
+    }
+}
+
+.about-wrapper {
+  padding-bottom: 25px;
+    h4 {
+        color: $white;
+        font-size: 1rem;
+    }
+
+    h3 {
+        background-color: $silver;
+        border-radius: 50%;
+        color: $black;
+        display: block;
+        font-size: 1.2rem;
+        float: left;
+        height: 100px;
+        margin: 10px 30px;
+        padding: 20px 10px;
+        width: 100px;
+    }
+
+    p {
+        color: $silver;
+        text-align: left;
+    }
+}
+
+.about-buttons {
+    a {
+        background-color: rgba($gold, .6);
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px black;
+        color: $black;
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 30px 20px;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        width: 20%;
+				transition: all .2s linear;
+
+        &:hover {
+            background-color: lighten($green, 10%);
+            color: $black;
+						transform: scale(1.2);
+        }
+
+        span {
+            display: block;
+            font-weight: 400;
+            font-size: .9rem;
+        }
+    }
+}
+
+
+//nav styling-----------------------
+.site-nav,
+ul {
+    float: right;
+    height: 60px;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        margin-top: 20px;
+        border-radius: 10px;
+        color: $silver;
+        display: block;
+        font-size: 0.8rem;
+        padding: 10px;
+        margin-right: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $gold;
+            color: $black;
+            transform: scale(1.2);
+        }
+    }
+}
+
+.active, a.active:hover, {
+    background-color: rgba($black, .4);
+    border-radius: 1px;
+    color: $silver;
+    transform: scale(1);
+}
+
+//layout styling-----------------------
+.is-secondary {
+    background: none;
+    background-color: $dkgreen;
+    text-align: left;
+    padding-left: 20px;
+    position: fixed;
+    z-index: 5;
+
+    .logo-container {
+        svg {
+            width: 15%;
+        }
+
+        .logo-smletter {
+            display: none;
+        }
+    }
+}
+
+.secondary-title {
+	align-items: center;
+	background-color: rgba($silver, .5);
+	display: flex;
+	margin: 68px 0 20px 0;
+	padding: 15px 0 0 0;
+	width: 100%;
+	border-bottom: 2px solid $dkgreen;
+	box-shadow: 3px 3px 10px $dkgreen;
+
+	img {
+		max-width: 400px;
+	}
+
+	h2 {
+		min-width: 225px;
+		padding: 20px;
+	}
+
+	p {
+		line-height: 1.2;
+		font-weight: 700;
+		margin-left: 40px;
+	}
+}
+
+.section-wrapper {
+	width: 100%;
+}
+
+.content-wrapper {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.page-footer {
+	background-color: $black;
+	font-size: 0.8rem;
+	width: 100%;
+	clear: both;
+	text-align: center;
+	padding-top: 10px;
+
+	p {
+		color: $gray;
+	}
+
+	a {
+		color: $gray;
+
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+
+//login styling-----------------------
+
+.login-section {
+    margin: 0 auto;
+    padding: 60px;
+    text-align: center;
+    width: 80%;
+
+    .login-form {
+        display: flex;
+        justify-content: space-around;
+    }
+    h3 {
+      margin-top: 10vh;
+      color: $gold;
+      text-shadow: 1px 1px 5px $black;
+    }
+
+    a, p {
+        background-color: $silver;
+        border-radius: 10px;
+        color: $black;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 20px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        width: 150px;
+        img {
+            display: block;
+            max-height: 50px;
+            margin: 0 auto;
+            padding: 5px;
+            max-width: 50px;
+        }
+
+        &:hover {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+}
+//repeated elements-----------------------
+
+.green-btn {
+	background-color: rgba($gold, .6);
+	border: none;
+	border-radius: 10px;
+	color: $black;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 5px 10px;
+	margin: 10px;
+	text-align: center;
+	width: 150px;
+	transition: all .2s linear;
+	&:hover {
+		background-color: lighten($green, 10%);
+		color: $black;
+		transform: scale(1.2);
+	}
+}
+
+.kit-arrow {
+	margin-left: 4px;
+	margin-top: 100px;
+	svg {
+		width: 80px;
+
+		polygon {
+			fill: $red;
+		}
+	}
+}
+
+.kit-form {
+	border-radius: 10px;
+	background-color: rgba($silver, .7);
+	border: 5px solid $black;
+	margin: 5px;
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
+
+	.form-line {
+		margin: 10px 0;
+	}
+	h3 {
+		color: $green;
+	}
+	span {
+		color: $red;
+	}
+	label, input, select {
+			color: $black;
+			font-size: 1.2rem;
+			padding: 0 5px;
+	}
+
+	textarea {
+			border-radius: 5px;
+			font-size: 1rem;
+			max-width: 400px;
+			resize: none;
+			width: 100%;
+	}
+
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+	}
+
+}
+
+//kit-builder styling-----------------------
+
+.post-btn {
+	display: block;
+	margin: 10px auto;
+}
+.kit {
+	color: $white;
+	position: relative;
+	background-color: rgba($black, .7);
+	border: 1px solid $silver;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	min-width: 375px;
+	flex-direction: column;
+	padding: 5px;
+	position: relative;
+	h3 {
+
+	}
+	h4 {
+		color: $white;
+	}
+	h5 {
+		color: $silver;
+	}
+	p {
+		color: $gray;
+		&:last-child {
+			color: $white;
+		}
+	}
+}
+.club-logo,
+.kit-type,
+.user-photo,
+.contact {
+    border-radius: 0 20px 0 20px;
+    position: absolute;
+    width: 75px;
+}
+.kit-type {
+    left: 0;
+    top: 0;
+    border-radius: 20px 0 20px 0;
+    color: $gold;
+    width: 60%;
+    padding: 3px 0 0 15px;
+    text-transform: capitalize;
+}
+.club-logo {
+    right: 0;
+    top: 0;
+}
+.user-photo {
+    left: 0;
+    bottom: 0;
+}
+.contact {
+	right:0;
+	bottom:0;
+	background-color: rgba($gold, .6);
+	border-radius: 20px 0 20px 0;
+	width: 80px;
+	text-align: right;
+	padding-right: 5px;
+	transition: all .2s linear;
+	&:hover {
+		background-color: lighten($green, 10%);
+		color: $black;
+		transform: scale(1.2);
+		transform-origin: right bottom;
+		border-radius: 20px 0 15px 0;
+
+	}
+}
+.kit-content {
+	margin: 35px 10px 15px 0px;
+	line-height: 1.1;
+}
+.kit-footer {
+	text-align: left;
+	margin-left: 80px;
+	line-height: 1.2;
+}
+.kit-item-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 10px 0;
+}
+.kit-item {
+    background-color: rgba($white, .5);
+    stroke: $black;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    svg {
+        width: 75px;
+        height: 50px;
+    }
+		h5 {
+			color: $white;
+			font-weight: 700;
+		}
+		p {
+			color: $black;
+		}
+}
+
+//kit-profile styling-----------------------
+.kit-profile-section {
+    align-items: flex-start;
+    border-radius: 10px;
+    border: none;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.kit-profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    h2 {
+        font-size: 1.9rem;
+        background-color: rgba($black, .6);
+        color: $gold;
+        width: 100%;
+    }
+}
+
+.kit-profile-user {
+    margin: 5px;
+    color: $black;
+    background-color: rgba($white, .3);
+    border-radius: 20px;
+    border: 1px solid $green;
+    padding: 10px 0;
+    text-align: center;
+
+    img {
+        max-width: 150px;
+        border-radius: 50%;
+        border: 2px solid $black;
+        background-color: $silver;
+    }
+}
+
+//kit-messages styling-----------------------
+.messages {
+	align-items: flex-start;
+}
+
+.messages-to, .messages-from {
+  display: flex;
+  flex-direction: column;
+	padding: 0;
+	max-width: 590px;
+	h3 {
+		background-color: rgba($dkgreen, .8);
+		color: $gold;
+	}
+}
+
+.kit-message {
+	width: 100%;
+	background-color: rgba($white, .2);
+	box-shadow: 2px 2px 5px $black;
+	text-align: left;
+	padding: 0 10px;
+	line-height: 1;
+}
+
+.message-header {
+	display: flex;
+	align-items: center;
+	span {
+		margin-left: 5px;
+		font-weight: 700;
+	}
+	img {
+		margin-top: 5px;
+	}
+}
+
+.message-body {
+	margin-left: 65px;
+}
+
+.message-btns {
+	text-align: right;
+	button{
+		background-color: $gold;
+		color: $black;
+		&:hover {
+			background-color: $red;
+		}
+	}
+}
+
+.message-form-wrapper {
+	width: 450px;
+	margin:0 10px 5px 0;
+	textarea {
+		min-height: 150px;
+	}
+}
+
+.message-photos {
+	display: flex;
+	justify-content: center;
+	span {
+		border: 1px solid $black;
+		background-color: rgba($dkgreen, .9);
+		padding: 5px;
+		border-radius: 10px;
+		margin: 10px;
+		p {
+			color: $silver;
+			&:last-child {
+				color: $gold;
+			}
+		}
+	}
+}
+
+
+//kit-viewer styling-----------------------
+.kit-viewer-section {
+    align-items: flex-start;
+    border-radius: 10px;
+    border: none;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.kit-viewer-title-wrapper {
+    align-items: center;
+    background-color: rgba($silver, .5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    padding: 10px 0;
+    width: 100%;
+
+    img {
+        max-width: 300px;
+    }
+
+    h2 {
+        color: $red;
+        font-weight: 700;
+        min-width: 225px;
+    }
+
+    p {
+        color: $black;
+        padding-left: 20px;
+    }
+}
+.kit-viewer-search {
+  width: 100%;
+}
+
+.kit-viewer-search-form {
+  background-color: rgba($silver, .8);
+  margin: 30px auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  label {
+    display: block;
+    color: $black;
+  }
+}
+.viewer-club-logo {
+  width: 150px;
+}
+
+.kit-viewer-display-container {
+    text-align: center;
+    width: 100%;
+    h2 {
+      color: $gold;
+      background-color: $black;
+    }
+    h3 {
+      background-color: $black;
+    }
+
+    .kit-viewer-display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+}
+
+.kit2 {
+    background-color: rgba($dkgreen, .7);
+    position: relative;
+    max-width: 300px;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: left;
+    margin: 5px;
+    font-size: 0.8rem;
+    color: $silver;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+   &:hover {
+    background-color: $dkgreen;
+  }
+
+    h3,
+    h4,
+    p {
+        padding: 0 5px;
+    }
+
+    h3 {
+        padding-top: 5px;
+        align-self: flex-start;
+        background-color: inherit;
+        border-radius: 15px 0 0 0;
+    }
+
+    p {
+        color: $silver;
+        line-height: 1;
+        padding: 5px 0;
+        font-size: 0.7rem;
+        text-align: center;
+
+    }
+
+
+    .club-logo {
+        background-color: $black;
+        border: 1px solid $black;
+        border-radius: 0 15px 0 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+    }
+
+    .item-detail-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      padding: 5px 0;
+      height: 120px;
+    }
+
+    .kit-view-item {
+      color: $black;
+      background-color: $red;
+    }
+
+    .view-tag {
+      color: $black;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .item-detail {
+        border: 1px solid black;
+        background-color: black;
+        text-align: center;
+        margin: 2px;
+        padding: 2px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        p {
+            color: $silver;
+        }
+
+        img {
+            max-width: 40px;
+            &:hover {
+              transform: scale(1.7);
+
+            }
+        }
+
+    }
+
+}
+.kit-viewer-footer {
+  margin-top: 5px;
+  background-color: rgba($black, .5);
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  align-items: center;
+  justify-content: flex-start;
+
+  .kit-viewer-footer-text {
+    font-size: .7rem;
+    height: 40px;
+    margin-left: 5px;
+    &:hover {
+      background-color: $gold;
+      color: $black;
+    }
+  }
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 0 0 0 10px;
+  }
+  button {
+    margin-left: auto;
+    margin-right: 5px;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    &:hover {
+      background-color: $red;
+    }
+  }
+}
+//modifier styling-----------------------
 .is-hidden {
-  display: none;
+	display: none;
+}
+.sm-btn {
+	font-size: .7rem;
+	width: 50px;
+	border-radius: 5px;
+	margin: 5px;
+}
+.is-sm-circle {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+
+}
+.is-sm-icon {
+
 }

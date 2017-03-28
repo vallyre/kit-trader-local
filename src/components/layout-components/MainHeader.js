@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import MainLogo from '../svgs/MainLogo';
 
-import '../../stylesheets/header.css';
-
 class MainHeader extends Component {
 
 
@@ -14,6 +12,7 @@ class MainHeader extends Component {
           <MainLogo />
           <nav className='site-nav'>
               <Link to="/profile" activeClassName='active'>Kit-Profile</Link>
+              <Link to="messages" activeClassName='active'>Kit-Messages</Link>
               <Link to="/builder" activeClassName='active'>Kit-Builder</Link>
               <Link to="/viewer" activeClassName='active'>Kit-Viewer</Link>
           </nav>

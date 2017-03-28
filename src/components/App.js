@@ -10,7 +10,7 @@ class App extends Component {
       super();
       this.getUser = this.getUser.bind(this);
       this.state = {
-        user: []
+        user: {}
       };
   }
   componentDidMount() {
@@ -21,7 +21,8 @@ class App extends Component {
     console.log('getUser IN');
       axios.get(`http://kit-trader.herokuapp.com/api/users.json`)
       .then ((response) => {
-        let user = response.data.users[6];
+        let user = response.data.users[8];
+        console.log('in');
         this.setState({user});
       })
       .catch(function(error) {

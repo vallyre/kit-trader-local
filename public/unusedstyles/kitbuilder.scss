@@ -1,55 +1,15 @@
 @import 'main.scss';
 
 .kit-builder-section {
-    align-items: flex-start;
-    border-radius: 10px;
-    border: none;
-    background-color: none;
-    display: flex;
-    flex-direction: column;
-}
 
-.kit-builder-title-wrapper {
-    align-items: center;
-    background-color: rgba($silver, .5);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
-    padding: 10px 0;
-    width: 100%;
-
-    img {
-        max-width: 300px;
-    }
-
-    h2 {
-        color: $red;
-        font-weight: 700;
-        min-width: 225px;
-    }
-
-    p {
-        color: $black;
-        padding-left: 20px;
-    }
 }
 
 .kit-builder-wrapper {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    padding: 0 20px 20px;
-    width: 100%;
+
 }
 
 .kit-builder-forms {
-    align-items: center;
     border-radius: 20px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .item-form,
@@ -102,67 +62,36 @@
         width: 90px;
     }
 
-    button {
-        background-color: $green;
-        border: none;
-        border-radius: 10px;
-        color: $white;
-        font-size: 1.2rem;
-        padding: 5px 10px;
-        width: 30%;
-
-        &:hover {
-            background-color: $gold;
-            color: $black;
-        }
-    }
 }
 
-p.post-btn {
-    background-color: $green;
-    border: 3px solid $black;
-    border-radius: 10px;
-    color: $white;
-    font-size: 1rem;
-    margin:10px 0 0 auto;
-    padding: 5px 0;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    width: 100px;
+.post-btn {
 
-    &:hover {
-        background-color: $gold;
-        border: 3px solid $silver;
-        color: $black;
-    }
 }
+
 
 .kit-arrow {
-    display: flex;
-    align-items: center;
+  align-items: center;
+  display: flex;
 
-    svg {
-        height: 180px;
+  svg {
+      height: 180px;
 
-        polygon {
-            fill: $red;
-        }
+      polygon {
+          fill: $red;
+      }
     }
 }
 
 .kit-display {
     border-radius: 20px;
-    min-width: 370px;
+    min-width: 400x;
     min-height: 100%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.kit-item-wrapper {
-    display: flex;
-    width: 100%;
-}
 
 .kit {
     color: $white;
@@ -207,7 +136,8 @@ p.post-btn {
 }
 
 .kit-content {
-    margin: 40px 20px 35px 25px;
+    margin: 35px 10px 15px 0px;
+    // margin: 40px 20px 35px 25px;
     line-height: 1.1;
 }
 
@@ -237,13 +167,12 @@ p.post-btn {
     margin: 5px;
     color: $black;
     border-radius: 10px;
-    max-width: 350px;
     padding: 5px;
     text-align: center;
 
     svg {
-        width: 100px;
-        height: 75px;
+        width: 75px;
+        height: 50px;
     }
 }
 

@@ -3,9 +3,6 @@ import child from '../../images/nouniform.png';
 
 import {Link} from 'react-router';
 
-import '../../stylesheets/main.css';
-import '../../stylesheets/about.css';
-
 class About extends Component {
 
   goToLogin() {
@@ -21,7 +18,7 @@ class About extends Component {
           <h4>Offer your kit for sale, for trade, or as a donation (it is free).</h4>
           <div className='about-buttons'>
             <Link to="/builder">Unwanted uniform? <span>Find someone who needs it.</span>Post it!</Link>
-            <Link to="/viewer">Need a uniform? <span>Need it today? Find one.</span>Search it!</Link>
+            <Link to="/viewer">Need a uniform? <span>Need it today? Find one.</span>Find it!</Link>
           </div>
           <h3>What is a 'kit'?</h3>
           <p>A kit is a set of items which comprise player standard uniform attire.</p>

@@ -7,7 +7,7 @@ class KitProfileTitle extends Component {
     return (
         <section className='kit-profile-section'>
 
-          <div className='kit-profile-title-wrapper'>
+          <div className='secondary-title'>
             <img src={kitprofile} alt='kit profile logo' />
             <h2>Your kits.</h2>
             <div>

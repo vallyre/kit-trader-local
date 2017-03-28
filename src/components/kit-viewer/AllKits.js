@@ -19,7 +19,7 @@ class AllKits extends Component {
               {this.makeKits()}
               {Object
                 .keys(this.props.kits)
-                .map(key => <Kits key={key} kit={this.props.kits[key]}/>)}
+                .map(key => <Kits key={key} kit={this.props.kits[key]} club={this.props.club}/>)}
             </div>
         )
     }

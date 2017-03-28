@@ -7,10 +7,6 @@ import Arrow from '../svgs/Arrow';
 import axios from 'axios';
 
 
-import {Link} from 'react-router';
-
-import '../../stylesheets/kitbuilder.css';
-
 class KitBuilder extends Component {
     constructor() {
         super();
@@ -35,6 +31,7 @@ class KitBuilder extends Component {
         const timestamp = Date.now();
         kits[`kit-${timestamp}`] = kit;
         this.setState({kits: kits})
+        this.postKit(kit);
     }
     addItem(item) {
         const items = {
@@ -50,37 +47,30 @@ class KitBuilder extends Component {
 
         return (
           <span>
-          <ItemForm addItem={this.addItem} />
-          <p className='post-btn' onClick={(e) => this.postKit(this.state.kits)} to="/profile">Post it!</p>
-        </span>
-          )
+            <ItemForm addItem={this.addItem} />
+            <button className='green-btn post-btn' onClick={(e) => this.postKit(this.state.kits)} to="/profile">Looks Good Post it!</button>
+          </span>
+        )
       }
     }
     showKitForm() {
       if (!Object.keys(this.state.kits).length) {
 
-        return <KitForm addKit={this.addKit} currUser={this.props.user} />
+        return <KitForm postKit={this.postKit} addKit={this.addKit} currUser={this.props.user} />
       }
     }
 
-    postKit(kitThing) {
-      console.log('kitThing', kitThing);
-      // const postKit = {
-      //     kit: {
-      //       trans_type: kitThing.kit-bunchanumbers.trans_type,
-      //       price: kitThing.kit-bunchanumbers.price,
-      //       zip_code: kitThing.kit-bunchanumbers.zip_code,
-      //       league: kitThing.kit-bunchanumbers.league,
-      //       season: kitThing.kit-bunchanumbers.season,
-      //       comment: kitThing.kit-bunchanumbers.comment,
-      //       club_id: kitThing.kit-bunchanumbers.club_id,
-      //       user_id: kitThing.kit-bunchanumbers.user_id,
-      //   }
-      // }
-          axios.post(`http://kit-trader.herokuapp.com/api/kits`, kitThing)
+    postKit(kitObj) {
+      const kitId = Object.keys(kitObj)[0];
+      const kit = {
+            kit : kitObj[kitId]
+      }
+
+      console.log('kit', kit);
+
+          axios.post(`http://kit-trader.herokuapp.com/api/kits`, kit)
           .then ((response) => {
               console.log(response);
-              <Link to="/profile" activeClassName='active' />
           })
           .catch(function(error) {
             console.log(error);
@@ -90,11 +80,11 @@ class KitBuilder extends Component {
     render() {
         return (
 
-            <section className='kit-builder-section'>
+            <section className='section-wrapper'>
 
                 <KitBuilderTitle/>
 
-                <div className='kit-builder-wrapper'>
+                <div className='content-wrapper builder'>
 
                     <div className='kit-builder-forms'>
                         {this.showKitForm()}
@@ -104,8 +94,10 @@ class KitBuilder extends Component {
                     <div className='kit-arrow'>
                         <Arrow/>
                     </div>
-                        <KitDisplay allKits={this.state.kits} addKit={this.addKit} allItems={this.state.items} addItem={this.addItem} currUser={this.props.user}/>
-                </div>
+
+                    <KitDisplay allKits={this.state.kits} addKit={this.addKit} allItems={this.state.items} addItem={this.addItem} currUser={this.props.user}/>
+
+              </div>
             </section>
 
         )

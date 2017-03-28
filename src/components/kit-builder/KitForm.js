@@ -3,114 +3,114 @@ import axios from 'axios';
 
 class KitForm extends Component {
 
-  constructor() {
-      super();
-      this.getClubs = this.getClubs.bind(this);
-      this.state = {
-        clubs: [],
-      };
-  }
-
-
-  createKit(event) {
-    event.preventDefault();
-    const kit = {
-      trans_type: this.transtype.value,
-      price: this.kitprice.value,
-      club: this.club.value,
-      league: this.level.value,
-      season: this.season.value,
-      zip_code: this.zip.value,
-      cell: this.cell.value,
-      comment: this.comment.value,
-      club_id: Number(this.club.value),
-      user_id: this.props.currUser.id
+    constructor() {
+        super();
+        this.getClubs = this.getClubs.bind(this);
+        this.state = {
+            clubs: []
+        };
     }
-    this.props.addKit(kit);
-    this.kitForm.reset();
-  }
 
-  componentDidMount() {
-    this.getClubs();
-  }
+    createKit(event) {
+        event.preventDefault();
+        const kit = {
+            trans_type: this.transtype.value,
+            price: this.kitprice.value,
+            club: this.club.value,
+            league: this.level.value,
+            season: this.season.value,
+            zip_code: this.zip.value,
+            comment: this.comment.value,
+            club_id: Number(this.club.value),
+            user_id: this.props.currUser.id
+        }
+        this.props.addKit(kit);
+        this.kitForm.reset();
+    }
 
-  getClubs() {
-    axios.get(`http://kit-trader.herokuapp.com/api/clubs.json`)
-    .then ((response) => {
-        let clubs = response.data.clubs;
-        this.setState({clubs});
-        // console.log(this.state.clubs);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-  }
+    componentDidMount() {
+        this.getClubs();
+    }
 
-  render() {
+    getClubs() {
+        axios.get(`http://kit-trader.herokuapp.com/api/clubs.json`).then((response) => {
+            let clubs = response.data.clubs;
+            this.setState({clubs});
+            // console.log(this.state.clubs);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
 
-    return (
-    <form ref={(input) => this.kitForm = input} className='kit-form' onSubmit={(e) => this.createKit(e)}>
-      <h3>Describe your kit.</h3>
-      <p>Your kit setup will display on the right.</p>
+    render() {
 
-      <div className='kit-form-line'>
+        return (
+            <form className='kit-form kitform' ref={(input) => this.kitForm = input} onSubmit={(e) => this.createKit(e)}>
+                <h3>Describe your kit.</h3>
+                <p>Your kit setup will display on the right.</p>
 
-        <label htmlFor='kit-trans-type'>I want to</label>
-        <select ref={(input) => this.transtype = input} className='kit-trans-type' name='kit-trans-type'>
-          <option value='sell'>Sell</option>
-          <option value='trade'>Trade</option>
-          <option value='donate'>Donate</option>
-        </select><span>*</span>
+                <div className='form-line'>
 
-        <label htmlFor='kit-price'>Whole kit price $</label>
-        <input ref={(input) => this.kitprice = input}className='kit-price' type='number' name='kit-price' min='0' max='500.0' />
+                    <label htmlFor='kit-trans-type'>I want to</label>
+                    <select ref={(input) => this.transtype = input} className='kit-trans-type' name='kit-trans-type'>
+                        <option value='sell'>Sell</option>
+                        <option value='trade'>Trade</option>
+                        <option value='donate'>Donate</option>
+                    </select>
+                    <span>*</span>
 
-      </div>
+                    <label htmlFor='kit-price'>Whole kit price $</label>
+                    <input className='kit-price' ref={(input) => this.kitprice = input} type='number' name='kit-price' min='0' max='500.0'/>
 
-      <div className='kit-form-line'>
+                </div>
 
-        <label htmlFor='club'>Which club?</label>
-        <select ref={(input) => this.club = input}className='kit-club' name='club'>
+                <div className='form-line'>
 
-          {this.state.clubs.map((club) =>
-            <option value={club.id} key={club.id}>{club.short_name} | {club.long_name}</option>)}
+                    <label htmlFor='club'></label>
+                    <select className='kit-club' ref={(input) => this.club = input} name='club'>
 
-        </select><span>*</span>
+                        {this.state.clubs.map((club) => <option value={club.id} key={club.id}>{club.short_name}
+                            | {club.long_name}</option>)}
 
-      <select ref={(input) => this.level = input} className='kit-club-level'>
-          <option value='classic'>Classic</option>
-          <option value='challenge'>Challenge</option>
-          <option value='select'>Select</option>
-          <option value='academy'>Academy</option>
-          <option value='recreation'>Recreation</option>
-        </select><span>*</span>
-      </div>
+                    </select>
+                    <span>*</span>
 
-      <div className='kit-form-line'>
+                    <select ref={(input) => this.level = input} className='kit-club-level'>
+                        <option value='classic'>Classic</option>
+                        <option value='challenge'>Challenge</option>
+                        <option value='select'>Select</option>
+                        <option value='academy'>Academy</option>
+                        <option value='recreation'>Recreation</option>
+                    </select>
+                    <span>*</span>
 
-        <label htmlFor='kit-zip'>Zip code</label>
-        <input ref={(input) => this.zip = input} defaultValue='12345' className='kit-zip' type='number'/><span>*</span>
+                </div>
 
-        <label htmlFor='year'>Season</label>
-        <select ref={(input) => this.season = input} className='kit-season' name='size'>
-          <option value='2015-2016'>2015-2016</option>
-          <option value='2016-2017'>2016-2017</option>
-          <option value='2017-2018'>2017-2018</option>
-        </select><span>*</span>
+                <div className='form-line'>
 
-      <label htmlFor='kit-cell'>Cell #</label>
-        <input ref={(input) => this.cell = input} className='kit-cell' type='tel' />
-      </div>
+                    <label htmlFor='kit-zip'>Zip code</label>
+                    <input ref={(input) => this.zip = input} defaultValue='12345' className='kit-zip' type='number'/>
+                    <span>*</span>
+                </div>
+                <div className='form-line'>
 
-      <textarea ref={(input) => this.comment = input} maxLength='100' placeholder='Briefly comment on your items.'></textarea>
+                    <label htmlFor='year'>Season</label>
+                    <select ref={(input) => this.season = input} className='kit-season' name='size'>
+                        <option value='2015-2016'>2015-2016</option>
+                        <option value='2016-2017'>2016-2017</option>
+                        <option value='2017-2018'>2017-2018</option>
+                    </select>
+                    <span>*</span>
+                </div>
 
-      <button type='submit'>Make kit</button>
-    </form>
+                <textarea ref={(input) => this.comment = input} maxLength='100' placeholder='Briefly comment on your items.'></textarea>
+                <div className='form-line'>
+                    <button className='green-btn' type='submit'>Make kit</button>
+                </div>
+            </form>
 
-
-
-)
-}
+        )
+    }
 }
 
 export default KitForm;

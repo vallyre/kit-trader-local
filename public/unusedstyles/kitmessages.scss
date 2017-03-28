@@ -1,0 +1,32 @@
+@import 'main.scss';
+
+.kit-messages-wrapper {
+  align-items: flex-start;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  width: 100%;
+}
+
+.messages-to, .messages-from {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.kit-message, .messages-form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  input {
+    padding: 5px;
+    margin: 5px;
+  }
+
+}
+
+
+.is-hidden {
+  display: none;
+}
