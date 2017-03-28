@@ -3,8 +3,31 @@ import KitMessagesTitle from './KitMessagesTitle';
 import KitMessageForm from './KitMessageForm';
 import KitMessagesSent from './KitMessagesSent';
 import KitMessagesReceived from './KitMessagesReceived';
+import axios from 'axios';
+
 
 class KitMessages extends Component {
+
+  constructor() {
+      super();
+      this.getMessages = this.getMessages.bind(this);
+
+      this.state = {
+        messagesReceived: [],
+        messagesSent: {}
+      };
+  }
+
+  getMessages() {
+    axios.get(`http://kit-trader.herokuapp.com/api/conversations.json`)
+    .then ((response) => {
+      console.log('messages', response)
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+
     render() {
         return (
 

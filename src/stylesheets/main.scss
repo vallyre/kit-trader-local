@@ -331,11 +331,18 @@ ul {
     .login-form {
         display: flex;
         justify-content: space-around;
+				max-width: 500px;
+				margin: 0 auto;
     }
     h3 {
       margin-top: 10vh;
       color: $gold;
       text-shadow: 1px 1px 5px $black;
+			img {
+				max-width: 500px;
+				display: block;
+				margin: 0 auto;
+			}
     }
 
     a, p {
@@ -349,7 +356,7 @@ ul {
         padding: 10px;
         text-align: center;
         text-decoration: none;
-        width: 150px;
+        width: 200px;
         img {
             display: block;
             max-height: 50px;
@@ -876,6 +883,24 @@ ul {
       background-color: $red;
     }
   }
+}
+//notfound styling----------------------
+.notfound {
+	padding: 200px;
+	text-align: center;
+	img {
+		width: 400px;
+	}
+	h2 {
+		margin-bottom: 20px;
+		background-color: rgba($black, .5);
+	}
+	a {
+		text-decoration: none;
+		font-size: 1.5rem;
+		padding: 10px;
+		margin: 10px;
+	}
 }
 //modifier styling-----------------------
 .is-hidden {

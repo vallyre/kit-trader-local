@@ -19,11 +19,11 @@ class App extends Component {
 
   getUser() {
     console.log('getUser IN');
-      axios.get(`http://kit-trader.herokuapp.com/api/users.json`)
+      axios.get(`http://kit-trader.herokuapp.com/auth/sessions`)
       .then ((response) => {
-        let user = response.data.users[8];
-        console.log('in');
-        this.setState({user});
+        // let user = response.data.users[8];
+        console.log('userresp', response);
+        // this.setState({user});
       })
       .catch(function(error) {
         console.log(error);
