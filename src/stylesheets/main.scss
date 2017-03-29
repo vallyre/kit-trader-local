@@ -25,7 +25,7 @@ html {
 }
 
 body {
-	background: $black;
+	background: url('../images/grass.jpg') repeat center center;
 	color: $white;
 	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
@@ -103,9 +103,9 @@ a {
 
 .logo-container {
 	svg {
+		max-width: 800px;
 		filter: drop-shadow(2px 2px 10px black);
-		margin-top: 20px;
-		width: 50%;
+		margin-top: 25px;
 
 		path {
 			fill: $white;
@@ -114,7 +114,7 @@ a {
 
 		.logo-shirt {
 			fill-opacity: 0.5;
-			stroke: $white;
+			fill: $gold;
 			stroke-width: 0.5;
 		}
 
@@ -138,35 +138,40 @@ a {
 .site-nav {
 	float: right;
 	height: 60px;
-	width: 70%;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
+	align-items: center;
 
 	a {
 		margin-top: 20px;
-		border-radius: 10px;
+		border-radius: 5px;
 		color: $silver;
 		display: block;
-		font-size: 0.8rem;
+		font-size: 1rem;
+		background-color: inherit;
 		padding: 10px;
 		margin-right: 20px;
 		text-transform: uppercase;
 		text-decoration: none;
 
 		&:hover {
+			border-radius: 5px;
+			color: $gray;
 			background-color: $gold;
 			color: $black;
-			transform: scale(1.2);
 		}
 	}
 }
 
 ,
-.active,
+a.active {
+	background-color: rgba($black, .9);
+	transform: scale(1);
+	color: $gray;
+}
 a.active:hover {
-	background-color: rgba($black, .4);
-	border-radius: 1px;
-	color: $silver;
+	background-color: rgba($black, .9);
+	color: $gray;
 	transform: scale(1);
 }
 //layout styling-----------------------
@@ -232,6 +237,7 @@ a.active:hover {
 	background-color: $black;
 	font-size: 0.8rem;
 	width: 100%;
+	height: 20vh;
 	clear: both;
 	text-align: center;
 	padding-top: 10px;
@@ -464,23 +470,7 @@ a.active:hover {
 		height: 325px;
 	}
 }
-//choice styling---------------------
-.choice-wrapper {
-	position: absolute;
-	top: 20%;
-	left: calc(50% - 200px);
 
-	.choice {
-		text-decoration: none;
-		display: block;
-		width: 100%;
-		margin: 30px 0;
-
-		span {
-			display: block;
-		}
-	}
-}
 //kit-builder styling-----------------------
 .post-btn {
 	display: block;
@@ -617,8 +607,8 @@ a.active:hover {
 //kit-profile styling-----------------------
 
 .kit-profile-section {
-	align-items: flex-start;
-	justify-content: flex-start;
+	align-items: center;
+	justify-content: center;
 	border-radius: 10px;
 	border: none;
 	background-color: none;
@@ -639,7 +629,7 @@ a.active:hover {
 	justify-content: center;
 
 	h4 {
-		background-color: rgba($white, .5);
+		background-color: rgba($white, .7);
 	}
 
 	a {
@@ -655,19 +645,56 @@ a.active:hover {
 	}
 }
 
-// .profile-messages {
-// 	min-width: 35%;
-// 	.messages {
-// 		padding: 10px;
-// 		border-radius: 10px;
-// 		margin: 10px 0;
-// 		background-color: rgba($white, .5);
-// 	}
-// }
 .kit-things {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: center;
+	.choice-article {
+		background-color: rgba($black, .2);
+		border: 1px solid $green;
+		width: 500px;
+
+		padding: 30px;
+		border-radius: 10px;
+		svg {
+			display: block;
+			margin: 20px auto;
+			margin-bottom: 20px;
+			width: 300px;
+
+			.logo-smletter {
+				fill: $white;
+			}
+			.logo-lgletter {
+				fill: rgba($white, .5);
+			}
+
+			.logo-arrow {
+				fill: $red;
+			}
+
+			.logo-shirt {
+				fill: rgba($gold, .5);
+				stroke: black;
+			}
+		}
+	}
+	a.choice {
+		padding: 10px;
+		margin: 10px;
+		border-radius: 10px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		background-color: rgba($gold, .6);
+		color: $black;
+		transition: all 0.2s linear;
+		display: block;
+		text-align: center;
+		&:hover {
+			background-color: lighten($green, 10%);
+			transform: scale(1.2);
+		}
+	}
 
 	.kit {
 		display: flex;
@@ -708,11 +735,35 @@ a.active:hover {
 .kit-display {
 	display: flex;
 	justify-content: space-around;
+
 	flex-wrap: wrap;
 	.kit {
 		max-width: 600px;
 		margin: 20px;
 
+	}
+}
+.club-select {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.club {
+		width: 200px;
+		background-color: rgba($white, .5);
+		margin: 5px;
+		border-radius: 10px;
+		box-shadow: 2px 2px 5px $black;
+		padding: 5px;
+		text-align: center;
+		transition: all .2s linear;
+		h3 {
+			font-weight: 700;
+		}
+		&:hover {
+			background-color: rgba($gold, .5);
+			transform: scale(1.2);
+		}
 	}
 }
 

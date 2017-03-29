@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import KitProfileTitle from './KitProfileTitle';
 import MyKits from './MyKits';
+import Choice from '../misc-content/Choice';
 // import KitMessagesDisplay from '../kit-messages/KitMessagesDisplay';
 import {Link} from 'react-router';
 import axios from 'axios';
@@ -12,6 +13,7 @@ class KitProfile extends Component {
         // this.getMessages = this.getMessages.bind(this);
         // this.getSender = this.getSender.bind(this);
         // this.getRecipient = this.getRecipient.bind(this);
+        this.showChoice = this.showChoice.bind(this);
 
         this.state = {
             currUser: {
@@ -84,6 +86,12 @@ class KitProfile extends Component {
     //   <KitMessagesDisplay messages={this.state.messages}/>
     // </div>
 
+    showChoice() {
+        if (!Object.keys(this.state.currUser.kits).length) {
+            return (<Choice classes='kit-form' />);
+        }
+    }
+
     render() {
         return (
 
@@ -101,8 +109,8 @@ class KitProfile extends Component {
                     </div>
 
                     <div className='kit-things'>
+                        {this.showChoice()}
                         {Object.keys(this.state.currUser.kits).map(key => <MyKits key={key} user={this.state.currUser} kit={this.state.currUser.kits[key]}/>)}
-
                     </div>
 
                 </div>

@@ -10,6 +10,7 @@ class KitViewer extends Component {
         super();
         this.getClubs = this.getClubs.bind(this);
         this.filterClubs = this.filterClubs.bind(this);
+        this.setFilter = this.setFilter.bind(this);
         this.showKits = this.showKits.bind(this);
         this.showSearchForm = this.showSearchForm.bind(this);
 
@@ -33,7 +34,16 @@ class KitViewer extends Component {
         });
     }
 
+    setFilter(club) {
+        let filtered = {
+            ...this.state.filtered
+        };
+        this.setState({filtered: club});
+        this.showKits();
+    }
+
     filterClubs(fclub) {
+        console.log('in filterClubs', fclub);
         let filtered = {
             ...this.state.filtered
         };
@@ -55,13 +65,14 @@ class KitViewer extends Component {
                 <div className='view-head'>
                     <div className='header'>
 
-                        <h2>{this.state.filtered.short_name} | {this.state.filtered.long_name}</h2>
+                        <h2>{this.state.filtered.short_name}
+                            | {this.state.filtered.long_name}</h2>
                         <img className='viewer-club-logo' src={this.state.filtered.image
                             ? require(`../../images/clublogos/${this.state.filtered.image}`)
                             : ''} alt='club logo'/>
                     </div>
-                    <KitSearchForm classes='form-secondary' allClubs={this.state.clubs} filter={this.filterClubs}/>
-                    <AllKits kits={this.state.filtered.kits} club={this.state.filtered}/>
+                    <KitSearchForm classes='form-secondary' formType='secondary' allClubs={this.state.clubs} filter={this.filterClubs}/>
+                    <AllKits kits={this.state.filtered.kits} club={this.state.filtered} filter={this.filterClubs}/>
                 </div>
             )
         }
@@ -69,12 +80,13 @@ class KitViewer extends Component {
 
     showSearchForm() {
         if (!Object.keys(this.state.filtered).length) {
+            return (<KitSearchForm classes='kit-form' allClubs={this.state.clubs} filter={this.setFilter}/>)
 
-            return (<KitSearchForm classes='kit-form' allClubs={this.state.clubs} filter={this.filterClubs}/>)
         }
     }
 
     render() {
+
         return (
             <section className='section-wrapper'>
                 <KitViewerTitle/>
