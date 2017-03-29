@@ -1,3 +1,17 @@
+# Kit-Trader
+*Upcycling Uniforms.*
+
+## Live at http://kit-trader.com
+
+Kit-trader is a single-purpose marketplace for the selling, trading and donation of previously-owned uniform kits.  Built with React with a Ruby/Rails back end.  
+
+#### Project Collaborators:
+Vallyre Hyers http://vallyre@vallyre.com
+
+Thomas Fitzpatrick 
+
+# ---------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
