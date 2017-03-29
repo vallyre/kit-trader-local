@@ -1,7 +1,4 @@
 import React from 'react';
-import HomeHeader from '../layout-components/HomeHeader';
-import About from '../misc-content/About';
-import MainFooter from '../layout-components/MainFooter';
 import logowide from '../../images/logowide.svg';
 import {Link} from 'react-router';
 

@@ -1,56 +1,59 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import MainHeader from './layout-components/MainHeader'
 import MainFooter from './layout-components/MainFooter'
 import axios from 'axios';
 
-
 class App extends Component {
 
-  constructor() {
-      super();
-      this.getUser = this.getUser.bind(this);
-      this.state = {
-        user: {}
-      };
-  }
-  componentDidMount() {
-    this.getUser();
-  }
+    constructor() {
+        super();
+        this.getUser = this.getUser.bind(this);
+        this.state = {
+            user: {}
+        };
+    }
+    componentDidMount() {
+        this.getUser();
+    }
 
-  getUser() {
-    console.log('getUser IN');
-      axios.get(`http://kit-trader.herokuapp.com/auth/sessions`)
-      .then ((response) => {
-        // let user = response.data.users[8];
-        console.log('userresp', response);
-        // this.setState({user});
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  }
+    getUser() {
+        let stuff = {
+            method: 'get',
+            url: 'https://kit-trader.herokuapp.com/auth/sessions',
+            withCredentials: true
+        };
+        axios(stuff).then((response) => {
+            let user = response.data;
+            console.log('ITS THE APP');
+            this.setState({user});
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
 
-  render() {
+    render() {
 
-    const childWithProp =
-      React.Children.map(this.props.children, (child) => {
-        return React.cloneElement(child, {add: this.getUser, user: this.state.user});
-    });
+        const childWithProp = React.Children.map(this.props.children, (child) => {
+            return React.cloneElement(child, {
+                add: this.getUser,
+                user: this.state.user
+            });
+        });
 
-    return (
+        return (
 
-      <div>
-      <MainHeader />
-      <main>
+            <div>
+                <MainHeader/>
+                <main>
 
-        {childWithProp}
+                    {childWithProp}
 
-      </main>
-      <MainFooter />
-      </div>
+                </main>
+                <MainFooter/>
+            </div>
 
-    );
-  }
+        );
+    }
 
 }
 

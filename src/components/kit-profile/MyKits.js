@@ -26,7 +26,7 @@ class MyKits extends Component {
           <footer className='kit-footer'>
             <p>Listed by:</p>
             <h4>{this.props.user.name}</h4>
-            <h5>{this.props.user.email}</h5>
+            <a href={"mailto:" + this.props.user.email}>{this.props.user.email}</a>
           </footer>
       </div>
 

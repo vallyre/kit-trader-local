@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import child from '../../images/nouniform.png';
 
 import {Link} from 'react-router';
 
 class About extends Component {
 
-  goToLogin() {
 
-  }
   render() {
     return (
       <section className='about-section'>
-        <img src={child} alt='child player' />
         <div className='about-wrapper'>
           <h1 className='about-h1'>Kit-trader upcycles uniforms.</h1>
           <h4>With kit-trader.com, you can browse for club uniforms or post your own.</h4>

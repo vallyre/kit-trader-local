@@ -9,7 +9,7 @@ class KitProfileTitle extends Component {
 
           <div className='secondary-title'>
             <img src={kitprofile} alt='kit profile logo' />
-            <h2>Your kits.</h2>
+            <h2>Your messages &amp; kits.</h2>
             <div>
               <p>Kits you have available are shown below.</p>
               <p>Messages from kit-trader users are shown below your name.</p>

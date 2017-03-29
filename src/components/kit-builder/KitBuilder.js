@@ -66,11 +66,12 @@ class KitBuilder extends Component {
     postKit(kitObj) {
       const kit =  {
         kit: kitObj
-      }
+      };
 
-      console.log('kit', kitObj);
 
-          axios.post(`http://kit-trader.herokuapp.com/api/kits`, kit)
+      console.log('kit posted');
+
+          axios.post('https://kit-trader.herokuapp.com/api/kits', kit)
           .then ((response) => {
               let kitId = this.state.kitId;
               kitId = response.data.id;
@@ -86,13 +87,9 @@ class KitBuilder extends Component {
       const item =  {
         item: kitItem
       }
-
-      console.log('item', kitItem);
-      console.log('item', item);
-
           axios.post(`http://kit-trader.herokuapp.com/api/items`, item)
           .then ((response) => {
-            console.log(response);
+            console.log('item posted');
 
 
           })

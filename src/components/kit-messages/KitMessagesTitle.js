@@ -9,11 +9,10 @@ class KitMessagesTitle extends Component {
 
           <div className='secondary-title'>
             <img src={kitmessages} alt='kit messages logo' />
-            <h2>Your messages.</h2>
+            <h2>Send a message.</h2>
             <div>
-              <p>Your messages are shown below.</p>
+              <p>Send another user a kit message.</p>
               <p>You can receive and send messages.</p>
-              <p>Delete messages by clicking on the red x.</p>
             </div>
           </div>
 

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import kitmessages from '../../images/kitmessages.svg'
-
 class KitMessageForm extends Component {
   render() {
     return (

@@ -26,7 +26,7 @@ class KitViewer extends Component {
     getClubs() {
         axios.get(`http://kit-trader.herokuapp.com/api/clubs.json`).then((response) => {
             let clubs = response.data.clubs;
-            console.log('all clubs', clubs);
+            console.log('KitViewer clubs: ', clubs);
             this.setState({clubs});
         }).catch(function(error) {
             console.log(error);
@@ -52,14 +52,16 @@ class KitViewer extends Component {
         if (Object.keys(this.state.filtered).length) {
 
             return (
-                <div>
-                    <h2>All Kits for: {this.state.filtered.short_name}
-                        | {this.state.filtered.long_name}</h2>
-                    <img className='viewer-club-logo' src={this.state.filtered.image
-                        ? require(`../../images/clublogos/${this.state.filtered.image}`)
-                        : ''} alt='club logo'/>
-                      <AllKits kits={this.state.filtered.kits} club={this.state.filtered}/>
+                <div className='view-head'>
+                    <div className='header'>
+
+                        <h2>{this.state.filtered.short_name} | {this.state.filtered.long_name}</h2>
+                        <img className='viewer-club-logo' src={this.state.filtered.image
+                            ? require(`../../images/clublogos/${this.state.filtered.image}`)
+                            : ''} alt='club logo'/>
+                    </div>
                     <KitSearchForm classes='form-secondary' allClubs={this.state.clubs} filter={this.filterClubs}/>
+                    <AllKits kits={this.state.filtered.kits} club={this.state.filtered}/>
                 </div>
             )
         }
@@ -77,10 +79,10 @@ class KitViewer extends Component {
             <section className='section-wrapper'>
                 <KitViewerTitle/>
 
-                    <div className='content-wrapper viewer'>
-                        {this.showSearchForm()}
-                        {this.showKits()}
-                    </div>
+                <div className='content-wrapper viewer'>
+                    {this.showSearchForm()}
+                    {this.showKits()}
+                </div>
 
             </section>
 
