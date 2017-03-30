@@ -19,7 +19,6 @@ class KitForm extends Component {
             club: this.club.value,
             league: this.level.value,
             season: this.season.value,
-            zip_code: this.zip.value,
             comment: this.comment.value,
             club_id: Number(this.club.value),
             user_id: this.props.currUser.id
@@ -86,12 +85,6 @@ class KitForm extends Component {
 
                 </div>
 
-                <div className='form-line'>
-
-                    <label htmlFor='kit-zip'>Zip code</label>
-                    <input ref={(input) => this.zip = input} defaultValue='12345' className='kit-zip' type='number'/>
-                    <span>*</span>
-                </div>
                 <div className='form-line'>
 
                     <label htmlFor='year'>Season</label>

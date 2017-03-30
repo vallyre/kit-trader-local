@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import kitviewerlogo from '../../images/kitviewer.svg'
+import LongArrow from '../svgs/LongArrow';
 
 
 class KitViewerTitle extends Component {
@@ -8,13 +9,10 @@ class KitViewerTitle extends Component {
     return (
 
       <div className='secondary-title'>
+        <LongArrow class='long-arrow'/>
           <img src={kitviewerlogo} alt='kit viewer logo'/>
-          <h2>View kits.</h2>
-
           <div>
-            <p>Kit-trader lists kits.</p>
-            <p>Kits can contain one or many items.</p>
-            <p>Start by selecting a club.</p>
+            <p>Select a club to view kits.</p>
           </div>
 
       </div>

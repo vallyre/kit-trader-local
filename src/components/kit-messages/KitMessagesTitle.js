@@ -9,7 +9,6 @@ class KitMessagesTitle extends Component {
 
           <div className='secondary-title'>
             <img src={kitmessages} alt='kit messages logo' />
-            <h2>Send a message.</h2>
             <div>
               <p>Send another user a kit message.</p>
               <p>You can receive and send messages.</p>

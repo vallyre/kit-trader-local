@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import kitprofile from '../../images/kitprofile.svg'
+import LongArrow from '../svgs/LongArrow';
+
 
 class KitProfileTitle extends Component {
   render() {
@@ -8,12 +10,11 @@ class KitProfileTitle extends Component {
         <section className='kit-profile-section'>
 
           <div className='secondary-title'>
+            <LongArrow class='long-arrow'/>
             <img src={kitprofile} alt='kit profile logo' />
-            <h2>Your messages &amp; kits.</h2>
             <div>
-              <p>Kits you have available are shown below.</p>
-              <p>Messages from kit-trader users are shown below your name.</p>
-              <p>Deleted kits are removed from Kit-trader.</p>
+              <p>All the kits you have listed.</p>
+
             </div>
           </div>
 

@@ -10,7 +10,7 @@ $maroon: maroon;
 $navy: navy;
 $orange: darkorange;
 $purple: purple;
-$red: red;
+$red: rgb(200, 6, 6);
 $royal: blue;
 $silver: silver;
 $white: white;
@@ -25,7 +25,6 @@ html {
 }
 
 body {
-	background: url('../images/grass.jpg') repeat center center;
 	color: $white;
 	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
@@ -90,6 +89,24 @@ a {
 		transform: scale(1.2);
 	}
 }
+
+//video --------------------------
+#index-video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	z-index: -100;
+	right: 0;
+	bottom: -10vh;
+	background-size: cover;
+	overflow: hidden;
+	position: absolute;
+}
+.index-video-wrapper {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+}
 //homepage header-----------------------
 
 .site-header {
@@ -103,7 +120,7 @@ a {
 
 .logo-container {
 	svg {
-		max-width: 800px;
+		max-width: 500px;
 		filter: drop-shadow(2px 2px 10px black);
 		margin-top: 25px;
 
@@ -196,28 +213,27 @@ a.active:hover {
 }
 
 .secondary-title {
-	align-items: center;
+	align-items: flex-end;
 	background-color: rgba($silver, .5);
 	display: flex;
-	margin: 68px 0 20px;
-	padding: 15px 0 0;
+	justify-content: space-between;
 	width: 100%;
 	border-bottom: 2px solid $dkgreen;
-	box-shadow: 3px 3px 10px $dkgreen;
+	text-align: right;
+	margin: 75px 0 20px 0;;
+	padding: 5px 20px;
+
 
 	img {
 		max-width: 400px;
-	}
-
-	h2 {
-		min-width: 225px;
-		padding: 20px;
+		margin-bottom: -25px;
+		z-index: 100;
 	}
 
 	p {
-		line-height: 1.2;
 		font-weight: 700;
-		margin-left: 40px;
+		font-size: 1.6rem;
+		margin-bottom: 2px;
 	}
 }
 
@@ -231,6 +247,7 @@ a.active:hover {
 	justify-content: center;
 	align-items: flex-start;
 	width: 100%;
+
 }
 
 .page-footer {
@@ -254,11 +271,34 @@ a.active:hover {
 		}
 	}
 }
+//arrow animation-------------------
+.secondary-title {
+	position: relative;
+	svg {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+		fill: rgba($gold, .9);
+		animation: move 4s ease-in .5s 1;
+
+		transform: translate(-1500px, 0);
+	}
+}
+@keyframes move {
+	0% {
+	}
+	100% {
+		transform: translate(100px, 0);
+		opacity: 0;
+	}
+}
+
 //repeated elements-----------------------
 
 .green-btn {
 	background-color: rgba($gold, .6);
-	border: none;
+	border: 1px solid $gray;
 	border-radius: 10px;
 	color: $black;
 	font-size: 1rem;
@@ -332,32 +372,38 @@ a.active:hover {
 		margin: 0;
 	}
 }
+
+
 //home styling-----------------------
 
 .about-h1 {
-	padding-top: 20px;
-	text-shadow: 2px 2px 5px $black;
+	text-shadow: 1px 1px 3px $gray;
 	font-size: 3rem;
 	text-align: center;
+	color: $red;
+	line-height: 1;
+	margin-bottom: 30px;
 }
 
 .about-wrapper {
 	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+	align-items: stretch;
+	justify-content: space-between;
 	width: 100%;
+	height: 90%;
 }
 
 .about-col1 {
-	margin: 20px;
 	box-shadow: 2px 2px 5px $black;
 	padding: 20px;
 	border-radius: 20px;
 	text-align: center;
-	background-color: lighten($gold, 40%);
+	background-color: rgba(#C8D4B6,.95);
 	border: 2px solid $black;
 	width: 400px;
-	height: 325px;
+	flex: none;
+	height: 400px;
+	align-self: center;
 
 	.login-section {
 		svg {
@@ -421,27 +467,34 @@ a.active:hover {
 
 .about-col2 {
 	text-align: center;
+	height: 600px;
+	width: 300px;
+	background-color: rgba($white, .4);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-shadow: 0 10px 20px $black;
+	border-left: 5px solid black;
+
 
 	.main-tag {
+		padding: 20px;
 		h4 {
 			font-weight: 700;
-			border-radius: 20px 20px 0 0;
-			background-color: rgba($green, .4);
 			color: $white;
+		}
 
 			span {
 				display: block;
 			}
-			padding: 20px;
-		}
 	}
 
 	.kit-description {
-		background-color: rgba($white, .8);
-		border-radius: 0 0 20px 20px;
-		padding: 20px;
 		color: $white;
 		text-align: center;
+		h3 {
+			background: rgba($white, .7);
+		}
 
 		img {
 			height: 40px;
@@ -449,7 +502,8 @@ a.active:hover {
 		}
 
 		ul {
-			margin: 0 auto;
+			margin: 20px auto;
+			width: 200px;
 		}
 
 		li {
@@ -457,19 +511,42 @@ a.active:hover {
 			margin: 0 10px;
 		}
 	}
+	.what-kit {
+		background-color: rgba($white, .8);
+		padding: 10px;
+		text-align: left;
+	}
+	p {
+		padding: 8px;
+	}
 }
 
 .about-col3 {
-	margin: 20px;
+	background-color: rgba($white, .4);
+	width: 300px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	box-shadow: 0 0 20px $black;
+	border-right: 5px solid black;
 
-	img {
-		box-shadow: 2px 2px 5px $black;
-		border: 2px solid $black;
-		border-radius: 20px;
-		width: 400px;
-		height: 325px;
+
+	.main-tag {
+		ul {
+			display: flex;
+			justify-content: space-between;
+			padding: 20px 0;
+		}
+		p {
+			color: $black;
+			background: rgba($white, .7);
+			padding: 20px;
+
+		}
 	}
 }
+
+
 
 //kit-builder styling-----------------------
 .post-btn {
@@ -735,10 +812,9 @@ a.active:hover {
 .kit-display {
 	display: flex;
 	justify-content: space-around;
-
 	flex-wrap: wrap;
 	.kit {
-		max-width: 600px;
+		max-width: 440px;
 		margin: 20px;
 
 	}
@@ -747,6 +823,7 @@ a.active:hover {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-bottom: 20px;
 
 	.club {
 		width: 200px;
@@ -764,6 +841,13 @@ a.active:hover {
 			background-color: rgba($gold, .5);
 			transform: scale(1.2);
 		}
+	}
+}
+
+.view-head {
+	h2 {
+		padding: 0 100px;
+		width: 100%;
 	}
 }
 

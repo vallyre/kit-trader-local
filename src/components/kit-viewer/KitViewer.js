@@ -65,8 +65,7 @@ class KitViewer extends Component {
                 <div className='view-head'>
                     <div className='header'>
 
-                        <h2>{this.state.filtered.short_name}
-                            | {this.state.filtered.long_name}</h2>
+                        <h2>{this.state.filtered.short_name}&nbsp;|&nbsp;{this.state.filtered.long_name}</h2>
                         <img className='viewer-club-logo' src={this.state.filtered.image
                             ? require(`../../images/clublogos/${this.state.filtered.image}`)
                             : ''} alt='club logo'/>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import facebook from '../../images/fbook.svg';
 import google from '../../images/google.svg';
 import MainLogo from '../../components/svgs/MainLogo';
-import child from '../../images/nouniform.png';
+import video from '../../images/movie2.mp4';
 import jersey from '../../images/jersey.svg';
 import jacket from '../../images/jacket.svg';
 import shorts from '../../images/shorts.svg';
@@ -12,16 +12,45 @@ import shinguards from '../../images/shinguards.svg';
 import ball from '../../images/ball.svg';
 import shoes from '../../images/shoes.svg';
 import gloves from '../../images/gloves.svg';
+import acs from '../../images/clublogos/acs.png';
+import casl from '../../images/clublogos/casl.png';
+import tusa from '../../images/clublogos/tusa.png';
+import tfca from '../../images/clublogos/tfca.png';
+import sasl from '../../images/clublogos/sasl.png';
+import wfc from '../../images/clublogos/wfc.png';
 
 class Login extends Component {
 
     render() {
         return (
-            <div >
+            <div>
+                <div className='index-video-wrapper'>
+                    <video autoPlay loop id='index-video'>
+                        <source src={video} type='video/mp4'/>
+                    </video>
+                </div>
 
-                <h1 className='about-h1'>We upcycle uniforms.</h1>
                 <div className='about-wrapper'>
+
+                    <div className='about-col3'>
+                        <div className='main-tag'>
+                            <p>With kit-trader.com, you can browse for club uniforms or post your own.</p>
+                            <ul>
+                              <li><img src={acs} alt='jersey'/></li>
+                              <li><img src={casl} alt='shorts'/></li>
+                              <li><img src={tusa} alt='jacket'/></li>
+                              <li><img src={tfca} alt='pants'/></li>
+                              <li><img src={sasl} alt='pants'/></li>
+                              <li><img src={wfc} alt='pants'/></li>
+                            </ul>
+                            <p>Offer your kit for sale, for trade, or donate it to someone.</p>
+                              <p>Kit-trader unites families with extra uniforms with the families who need them.</p>
+
+                        </div>
+                    </div>
+
                     <div className='about-col1'>
+                        <h1 className='about-h1'>Upcycling uniforms.</h1>
 
                         <article className='login-section'>
                             <h3>Login to use Kit-trader<MainLogo/></h3>
@@ -34,11 +63,6 @@ class Login extends Component {
                     </div>
                     <div className='about-col2'>
 
-                        <div className='main-tag'>
-                            <h4>With kit-trader.com, you can browse for club uniforms or post your own.
-                                <span>Offer your kit for sale, for trade, or donate it to someone.</span>
-                            </h4>
-                        </div>
                         <article className='kit-description'>
                             <h3>What is a 'kit'?</h3>
                             <ul>
@@ -52,16 +76,15 @@ class Login extends Component {
                                 <li><img src={shinguards} alt='shinguards'/></li>
                                 <li><img src={gloves} alt='gloves'/></li>
                             </ul>
-                            <p>A kit is a set of items which comprise player standard uniform attire.</p>
-                            <p>Soccer kits required by soccer clubs typically include one or more jerseys, shorts, socks, and warmups.</p>
-                            <p>Kit-trader unites families with extra uniforms with the families who need them.</p>
-                            <p>Every team starts with a kit.</p>
+                            <div className='what-kit'>
+
+                                <p>A kit is a set of items which comprise player standard uniform attire.</p>
+                                <p>Required Soccer kits typically include multiple jerseys, shorts, socks, and warmups.</p>
+                                <p>Every team starts with a kit.</p>
+                            </div>
                         </article>
                     </div>
-                    <div className='about-col3'>
-                        <img src={child} alt='child player'/>
 
-                    </div>
                 </div>
             </div>
 
