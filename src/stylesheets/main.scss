@@ -199,7 +199,7 @@ a.active:hover {
 	text-align: left;
 	padding-left: 20px;
 	position: fixed;
-	z-index: 5;
+	z-index: 500;
 
 	.logo-container {
 		svg {
@@ -811,11 +811,12 @@ a.active:hover {
 }
 .kit-display {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
+	width: 100%;
 	flex-wrap: wrap;
 	.kit {
-		max-width: 440px;
-		margin: 20px;
+		max-width: 300px;
+		margin: 10px;
 
 	}
 }
@@ -843,12 +844,8 @@ a.active:hover {
 		}
 	}
 }
-
 .view-head {
-	h2 {
-		padding: 0 100px;
-		width: 100%;
-	}
+	width: 100%;
 }
 
 //kit-messages styling-----------------------

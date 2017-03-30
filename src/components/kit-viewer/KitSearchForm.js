@@ -20,8 +20,7 @@ class KitSearchForm extends Component {
                         this.props.filter(this.getFilterValue());
                     }}>
                         <option value='null'>Select a Club</option>
-                        {this.props.allClubs.map((club) => <option value={club.short_name} key={club.short_name}>{club.short_name}
-                            | {club.long_name}</option>)}
+                        {this.props.allClubs.map((club) => <option value={club.short_name} key={club.short_name}>{club.short_name}&nbsp;|&nbsp;{club.long_name}</option>)}
 
                     </select>
 
