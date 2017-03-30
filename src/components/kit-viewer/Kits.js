@@ -5,8 +5,10 @@ import ViewKitItem from './ViewKitItem';
 class Kits extends Component {
 
   getPrice(price) {
-    if (Number(price) > 0) {
+    if (Number(price) > 0 && price) {
       return ` -- $${price}`;
+    } else {
+
     }
   }
 

@@ -24,34 +24,34 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <div className='index-video-wrapper'>
-                    <video autoPlay loop id='index-video'>
-                        <source src={video} type='video/mp4'/>
-                    </video>
-                </div>
 
+              <div className='index-video-wrapper'>
+                <video autoPlay loop id='index-video'>
+                  <source src={video} type='video/mp4'/>
+                </video>
+              </div>
                 <div className='about-wrapper'>
 
                     <div className='about-col3'>
                         <div className='main-tag'>
                             <p>With kit-trader.com, you can browse for club uniforms or post your own.</p>
                             <ul>
-                              <li><img src={acs} alt='jersey'/></li>
-                              <li><img src={casl} alt='shorts'/></li>
-                              <li><img src={tusa} alt='jacket'/></li>
-                              <li><img src={tfca} alt='pants'/></li>
-                              <li><img src={sasl} alt='pants'/></li>
-                              <li><img src={wfc} alt='pants'/></li>
+                                <li><img src={acs} alt='jersey'/></li>
+                                <li><img src={casl} alt='shorts'/></li>
+                                <li><img src={tusa} alt='jacket'/></li>
+                                <li><img src={tfca} alt='pants'/></li>
+                                <li><img src={sasl} alt='pants'/></li>
+                                <li><img src={wfc} alt='pants'/></li>
                             </ul>
                             <p>Offer your kit for sale, for trade, or donate it to someone.</p>
-                              <p>Kit-trader unites families with extra uniforms with the families who need them.</p>
+                            <p>Kit-trader unites families with extra uniforms with the families who need them.</p>
 
                         </div>
                     </div>
 
                     <div className='about-col1'>
-                        <h1 className='about-h1'>Upcycling uniforms.</h1>
-
+                        <h1 className='about-h1'><span>Uniforms</span>reused</h1>
+                        
                         <article className='login-section'>
                             <h3>Login to use Kit-trader<MainLogo/></h3>
                             <form className='login-form' type='submit'>

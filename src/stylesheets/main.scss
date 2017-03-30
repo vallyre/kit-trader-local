@@ -26,6 +26,8 @@ html {
 
 body {
 	color: $white;
+	background: url('../images/grass.jpg') repeat center center;
+
 	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
 	min-height: 100vh;
@@ -378,11 +380,15 @@ a.active:hover {
 
 .about-h1 {
 	text-shadow: 1px 1px 3px $gray;
-	font-size: 3rem;
+	font-size: 3.5rem;
 	text-align: center;
 	color: $red;
 	line-height: 1;
 	margin-bottom: 30px;
+	span {
+		font-size: 3rem;
+		display: block;
+	}
 }
 
 .about-wrapper {
@@ -402,7 +408,7 @@ a.active:hover {
 	border: 2px solid $black;
 	width: 400px;
 	flex: none;
-	height: 400px;
+	height: 450px;
 	align-self: center;
 
 	.login-section {
@@ -468,7 +474,7 @@ a.active:hover {
 .about-col2 {
 	text-align: center;
 	height: 600px;
-	width: 300px;
+	width: 400px;
 	background-color: rgba($white, .4);
 	display: flex;
 	flex-direction: column;
@@ -523,7 +529,7 @@ a.active:hover {
 
 .about-col3 {
 	background-color: rgba($white, .4);
-	width: 300px;
+	width: 400px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -535,12 +541,15 @@ a.active:hover {
 		ul {
 			display: flex;
 			justify-content: space-between;
-			padding: 20px 0;
+			padding: 40px 0;
 		}
 		p {
 			color: $black;
 			background: rgba($white, .7);
 			padding: 20px;
+			&:first-child {
+				font-weight: 700;
+			}
 
 		}
 	}
@@ -684,7 +693,7 @@ a.active:hover {
 //kit-profile styling-----------------------
 
 .kit-profile-section {
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 	border-radius: 10px;
 	border: none;
@@ -730,6 +739,7 @@ a.active:hover {
 		background-color: rgba($black, .2);
 		border: 1px solid $green;
 		width: 500px;
+		margin-top: 40px;
 
 		padding: 30px;
 		border-radius: 10px;
@@ -763,6 +773,7 @@ a.active:hover {
 		font-size: 1.4rem;
 		font-weight: 700;
 		background-color: rgba($gold, .6);
+		border: 1px solid black;
 		color: $black;
 		transition: all 0.2s linear;
 		display: block;
@@ -795,7 +806,7 @@ a.active:hover {
 	width: 100%;
 	h2 {
 		color: $black;
-		background-color: rgba($gold, .6);
+		background-color: rgba($gold, .2);
 	}
 }
 .form-secondary {
@@ -815,7 +826,7 @@ a.active:hover {
 	max-width: 100%;
 	flex-wrap: wrap;
 	.kit {
-		max-width: 300px;
+		width: 500px;
 		margin: 10px;
 
 	}
