@@ -2,6 +2,7 @@
 *Upcycling Uniforms.*
 
 ## Live at http://kit-trader.com
+#### *note:  back-end deployed on free heroku server, may be slow to load data*
 
 Kit-trader is a single-purpose marketplace for the selling, trading and donation of previously-owned uniform kits.  Built with React with a Ruby/Rails back end.  
 
